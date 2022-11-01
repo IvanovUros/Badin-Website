@@ -1,0 +1,277 @@
+:root {
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+$mobile: 768px;
+$laptop: 1024px;
+$desktop: 1366px;
+
+@mixin btn {
+    width: 90%;
+    height: 5rem;
+    background-color: #fff;
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.main-header {
+    width: 100%;
+    height: 10rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+
+    .logo-wrapper {
+        width: 10rem;
+        height: 3.5rem;
+        margin-left: 2rem;
+        position: relative;
+        @media  screen and (min-width:$laptop) {
+            margin-left: 3rem;
+        }
+        @media  screen and(min-width:$desktop) {
+            margin-top: 15rem;
+            margin-left: 10rem;
+        }
+
+        .logo {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .hamburger-wrapper {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        position: absolute;
+        right: 2rem;
+        display: flex;
+        align-items: center;
+        @media  screen and (min-width:$laptop) {
+            right: 10rem;
+
+        }
+        @media  screen and(min-width:$desktop) {
+            right: initial;
+            left: 4rem;
+            top: 50vh;
+            position: fixed;
+        }
+
+        .hamburger-top,
+        .hamburger-mid,
+        .hamburger-btm {
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            border-radius: 2px;
+        }
+
+        .hamburger-top {
+            position: absolute;
+            top: 2px;
+        }
+
+        .hamburger-btm {
+            position: absolute;
+            bottom: 2px;
+        }
+    }
+
+    .menu-text {
+        display: none;
+        @media  screen and(min-width:$desktop) {
+            display: block;
+            color: #fff;
+            position: absolute;
+            font-size: 1.5rem;
+            writing-mode: vertical-rl;
+            right: -2rem;
+        }
+    }
+}
+
+.hero-main {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 135vh;
+    background-image: url(/Badin-Website/slike/header-hero/hero-bg.png);
+    background-size: cover;
+    background-position: center;
+    @media  screen and (min-width:$laptop) {
+        height: 100vh;
+    }
+
+    .hero-heading {
+        color: #fff;
+        font-size: 4.8rem;
+        margin-top: 15rem;
+        margin-left: 2rem;
+        @media  screen and (min-width:$laptop) {
+          width: 50%;
+          font-size: 8rem;
+          margin-left: 3rem;
+        }
+        @media  screen and(min-width:$desktop) {
+            margin-left: 10rem;
+            margin-top: 25rem;
+        }
+    }
+
+    .hero-text {
+        color: #998d9c;
+        font-size: 2.2rem;
+        margin: 2rem 3rem 2rem 2rem;
+        line-height: 3rem;
+        font-weight: bold;
+        @media  screen and (min-width:$laptop) {
+            width: 40%;
+            margin-left: 3rem;
+        }
+        @media  screen and(min-width:$desktop) {
+            margin-left: 10rem;
+            width: 50%;
+            margin-top: 5rem;
+        }
+    }
+
+    .what-we-do {
+        @include btn();
+        margin-top: 1rem;
+        color: #333;
+        @media  screen and (min-width:$mobile) {
+            width: 30%;
+        }
+        @media  screen and (min-width:$laptop) {
+            width: 20%;
+            left: 3rem;
+        }
+        @media  screen and(min-width:$desktop) {
+            left: 10rem;
+            width: 15%;
+        }
+    }
+
+    .life-at-badin {
+        @include btn();
+        margin-top: 8rem;
+        background-color: #393939;
+        color: #fff;
+        @media  screen and (min-width:$mobile) {
+            width: 30%;
+            margin-top: 1rem;
+            margin-left: 25rem;
+        }
+        @media  screen and (min-width:$laptop) {
+            width: 20%;
+            margin-left: 20rem;
+        }
+        @media  screen and(min-width:$desktop) {
+            margin-left: 25rem;
+            width: 15%;
+        }
+    }
+
+    .hero-photo {
+        width: 100%;
+        height: 100%;
+    }
+
+    .big-photo-wrapper {
+        width: 450px;
+        height: 350px;
+        position: absolute;
+        bottom: -50px;
+        right: -90px;
+        @media  screen and (min-width:$mobile) {
+            width: 600px;
+            height: 450px;
+            right: -85px;
+            bottom: 0;
+        }
+        @media  screen and (min-width:$laptop) {
+            width: 630px;
+            height: 480px;
+            right: -65px;
+        }
+    }
+
+    .planet-wrapper {
+        width: 50px;
+        height: 45px;
+        position: absolute;
+        bottom: 200px;
+        left: 25%;
+        @media  screen and (min-width:$mobile) {
+            width: 60px;
+            height: 55px;
+            bottom: 280px;
+        }
+        @media  screen and (min-width:$laptop) {
+           bottom: initial;
+           top: 100px;
+           right: 15%;
+           left: initial;
+           width: 80px;
+           height: 75px;
+        }
+    }
+
+    .building-wrapper-left {
+        width: 70px;
+        height: 120px;
+        position: absolute;
+        bottom: -40px;
+        left: 50px;
+        @media  screen and (min-width:$mobile) {
+            left: 25%;
+            width: 90px;
+            height: 160px;
+            bottom: -10px;
+        }
+        @media  screen and (min-width:$laptop) {
+            width: 120px;
+            height: 210px;
+            left: 40%;
+            bottom: -50px;
+        }
+    }
+
+    .building-wrapper-right {
+        width: 60px;
+        height: 105px;
+        position: absolute;
+        bottom: 0;
+        right: 30px;
+        @media  screen and (min-width:$mobile) {
+            width: 70px;
+            height: 120px;
+            bottom: 80px;
+            right: 45px;
+        }
+        @media  screen and (min-width:$laptop) {
+            width: 85px;
+            height: 150px;
+            right: 65px;
+            bottom: 55px;
+        }
+    }
+}
