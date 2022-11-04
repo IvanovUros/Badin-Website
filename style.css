@@ -1,6 +1,6 @@
 :root {
   font-size: 62.5%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: futura-pt, "Arial Condensed", sans-serif;
 }
 
 * {
@@ -13,6 +13,7 @@
   width: 100%;
   height: 10rem;
   position: relative;
+  position: absolute;
   display: flex;
   align-items: center;
   z-index: 1;
@@ -92,20 +93,40 @@
 }
 
 .hero-main {
-  position: absolute;
+  /*position: absolute;
   top: 0;
   width: 100%;
   height: 135vh;
-  background-image: url(/Badin-Website/slike/header-hero/white-background.png), url(/Badin-Website/slike/header-hero/net.png), url(/Badin-Website/slike/header-hero/hero-bg.png);
-  background-size: initial, 1000px, cover;
+  background-image: url(/Badin-Website/slike/header-hero/white-background.png), url(/Badin-Website/slike/header-hero/net.png),url(/Badin-Website/slike/header-hero/hero-bg.png);
+  background-size: initial, 1000px , cover;
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 230px -60px, right, center;
+  overflow: hidden;
+  @media screen and (min-width:$tablet) {
+      background-size: 1100px, 700px, cover;
+      background-position: 250px -200px, right bottom, center;
+  }
+  @media  screen and (min-width:$laptop) {
+      height: 100vh;
+  }
+  @media screen and (min-width:$desktop) {
+      background-size: 1100px, 1000px, cover;
+      background-position: 700px 0px, right bottom, center;
+  }*/
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 135vh;
+  background-image: url(/Badin-Website/slike/header-hero/net.png), url(/Badin-Website/slike/header-hero/hero-bg.png);
+  background-size: 1000px, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-position: right, center;
   overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   .hero-main {
-    background-size: 1100px, 700px, cover;
-    background-position: 250px -200px, right bottom, center;
+    background-size: 700px, cover;
+    background-position: right bottom, center;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -115,15 +136,78 @@
 }
 @media screen and (min-width: 1366px) {
   .hero-main {
-    background-size: 1100px, 1000px, cover;
-    background-position: 700px 0px, right bottom, center;
+    background-size: 1000px, cover;
+    background-position: right bottom, center;
+  }
+}
+.hero-main .animated-curcle-yellow,
+.hero-main .animated-curcle-blue,
+.hero-main .animated-curcle-purple,
+.hero-main .animated-curcle-green {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(130px);
+  opacity: 80%;
+  z-index: 0;
+}
+@media screen and (min-width: 1366px) {
+  .hero-main .animated-curcle-yellow {
+    background-color: yellow;
+    left: 55%;
+    top: 20%;
+    -webkit-animation: circle 30s linear infinite;
+            animation: circle 30s linear infinite;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .hero-main .animated-curcle-blue {
+    background-color: blue;
+    left: 40%;
+    top: 50%;
+    animation: circle 20s linear infinite reverse;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .hero-main .animated-curcle-purple {
+    background-color: purple;
+    left: 15%;
+    top: 5%;
+    animation: circle 30s linear infinite reverse;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .hero-main .animated-curcle-green {
+    background-color: green;
+    top: 30%;
+    -webkit-animation: circle 20s linear infinite;
+            animation: circle 20s linear infinite;
+  }
+}
+@-webkit-keyframes circle {
+  0% {
+    transform: rotate(0deg) translate(-300px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(-300px) rotate(-360deg);
+  }
+}
+@keyframes circle {
+  0% {
+    transform: rotate(0deg) translate(-300px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(-300px) rotate(-360deg);
   }
 }
 .hero-main .hero-heading {
   color: #fff;
+  font-weight: 700;
   font-size: 4.8rem;
   margin-top: 15rem;
   margin-left: 2rem;
+  z-index: 5;
 }
 @media screen and (min-width: 1024px) {
   .hero-main .hero-heading {
@@ -140,10 +224,11 @@
 }
 .hero-main .hero-text {
   color: #998d9c;
+  font-weight: 600;
   font-size: 2.2rem;
   margin: 2rem 3rem 2rem 2rem;
   line-height: 3rem;
-  font-weight: bold;
+  z-index: 5;
 }
 @media screen and (min-width: 1024px) {
   .hero-main .hero-text {
@@ -172,6 +257,8 @@
   text-decoration: none;
   font-size: 2.5rem;
   font-weight: bold;
+  white-space: nowrap;
+  z-index: 1;
   margin-top: 1rem;
   color: #333;
 }
@@ -205,6 +292,8 @@
   text-decoration: none;
   font-size: 2.5rem;
   font-weight: bold;
+  white-space: nowrap;
+  z-index: 1;
   margin-top: 8rem;
   background-color: #393939;
   color: #fff;
@@ -350,4 +439,189 @@
     bottom: 0px;
     right: 30px;
   }
+}
+
+.clients {
+  width: 100%;
+  height: 100vh;
+  background-color: #ecf5ff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .clients {
+    height: 85vh;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .clients {
+    height: 50vh;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .clients {
+    height: 30vh;
+  }
+}
+.clients .clients-list {
+  width: 90vw;
+  height: 90vh;
+  list-style: none;
+}
+@media screen and (min-width: 768px) {
+  .clients .clients-list {
+    height: 80%;
+    width: 75%;
+  }
+}
+.clients .clients-list .client-logo-wrapper,
+.clients .clients-list .client-logo-wrapper--last,
+.clients .clients-list .client-logo-wrapper--last-laptop {
+  float: left;
+  width: 45vw;
+  height: 14.2857142857%;
+  border: 1px solid black;
+}
+@media screen and (min-width: 768px) {
+  .clients .clients-list .client-logo-wrapper,
+.clients .clients-list .client-logo-wrapper--last,
+.clients .clients-list .client-logo-wrapper--last-laptop {
+    width: 33.3333333333%;
+    margin-bottom: 0.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .clients .clients-list .client-logo-wrapper,
+.clients .clients-list .client-logo-wrapper--last,
+.clients .clients-list .client-logo-wrapper--last-laptop {
+    width: 20%;
+  }
+}
+.clients .clients-list .client-logo-wrapper--last {
+  margin-left: 22.5vw;
+}
+@media screen and (min-width: 768px) {
+  .clients .clients-list .client-logo-wrapper--last {
+    margin-left: 33.3333333333%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .clients .clients-list .client-logo-wrapper--last {
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .clients .clients-list .client-logo-wrapper--last-laptop {
+    margin-left: 20%;
+  }
+}
+
+.how-we-got {
+  width: 100%;
+  height: 130vh;
+  position: relative;
+}
+@media screen and (min-width: 1024px) {
+  .how-we-got {
+    height: 160vh;
+  }
+}
+.how-we-got .how-we-got-heading {
+  font-size: 5rem;
+  font-family: lust, "Courier", serif;
+  font-weight: 700;
+  font-style: italic;
+  margin: 1.5rem;
+}
+.how-we-got .text-top {
+  font-family: lust, "Courier", serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 5rem 1.5rem 5rem 1.5rem;
+  color: #4e5158;
+}
+.how-we-got .text-mid {
+  font-family: lust, "Courier", serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #4e5158;
+  margin: 0 1.5rem 5rem 1.5rem;
+}
+.how-we-got .text-btm {
+  font-family: lust, "Courier", serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #4e5158;
+  margin: 0 1.5rem 5rem 1rem;
+}
+.how-we-got .img-wrapper {
+  width: 80%;
+  height: 30%;
+  position: absolute;
+  border: 1px solid black;
+  bottom: 1rem;
+  left: 10%;
+  border-radius: 30px;
+}
+
+.services-home {
+  width: 100%;
+  height: 260vh;
+  background-color: #ecf5ff;
+  position: relative;
+  padding-top: 1rem;
+}
+.services-home .services-heading {
+  font-size: 5rem;
+  font-family: lust, "Courier", serif;
+  font-weight: 700;
+  font-style: italic;
+  margin: 5rem 0rem 5rem 1.5rem;
+}
+.services-home .services-text {
+  font-size: 1.5rem;
+  color: #9197ac;
+  font-family: lust, "Courier", serif;
+  font-weight: 600;
+  margin: 1.5rem;
+}
+.services-home .services-blue-btn {
+  width: 90%;
+  height: 5rem;
+  background-color: #fff;
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-weight: bold;
+  white-space: nowrap;
+  background-color: #317ade;
+  color: #fff;
+  width: 60%;
+  font-size: 2rem;
+  left: 1.5rem;
+  right: initial;
+}
+.services-home .services-link-container--up,
+.services-home .services-link-container--mid,
+.services-home .services-link-container--btm {
+  width: 90%;
+  height: 40rem;
+  border: 1px solid black;
+  position: absolute;
+  margin-left: 5%;
+  margin-top: 8rem;
+}
+.services-home .services-link-container--mid {
+  margin-top: 56rem;
+}
+.services-home .services-link-container--btm {
+  margin-top: 104rem;
 }/*# sourceMappingURL=style.css.map */
