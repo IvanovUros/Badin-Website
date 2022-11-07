@@ -433,13 +433,19 @@
     width: 100%;
     height: 130vh;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (min-width:$tablet) {
+        height: 150vh;    
+    }
     @media screen and (min-width:$laptop) {
         height: 160vh;
     }
 
     .how-we-got-heading {
         font-size: 5rem;
-        @include font-secondary-italic;
+        @include font-primary-medium-italic;
         margin: 1.5rem;
     }
 
@@ -475,6 +481,11 @@
         bottom: 1rem;
         left: 10%;
         border-radius: 30px;
+        @media  screen and (min-width:$tablet) {
+            width: 700px;
+            height: 470px;
+            left: initial;
+        }
     }
 }
 
@@ -487,8 +498,11 @@
 
     .services-heading {
         font-size: 5rem;
-        @include font-secondary-italic;
+        @include font-primary-medium-italic;
         margin: 5rem 0rem 5rem 1.5rem;
+        @media screen and (min-width:$tablet) {
+            margin-left: 4rem;
+        }
     }
 
     .services-text {
@@ -497,6 +511,9 @@
         font-family: $font-family-secondary;
         font-weight: $font-weight-medium;
         margin: 1.5rem;
+        @media screen and (min-width:$tablet) {
+            margin: 1.5rem 4rem;
+        }
     }
 
     .services-blue-btn {
@@ -507,24 +524,205 @@
         font-size: 2rem;
         left: 1.5rem;
         right: initial;
+        @media screen and (min-width:$tablet) {
+            margin-left: 3rem;
+        }
     }
 
-    .services-link-container--up,
-    .services-link-container--mid,
-    .services-link-container--btm {
-        width: 90%;
-        height: 40rem;
-        border: 1px solid black;
+    .services-container-list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .services-link-container  {
+            width: 95%;
+            margin-top: 8rem;
+            text-decoration: none;
+            @media screen and (min-width:$tablet) {
+                margin-left: 3rem;
+            }
+
+            .services-link-container-title--blue,
+            .services-link-container-title--orange,
+            .services-link-container-title--green {
+                font-size: 1.5rem;
+                font-weight: $font-weight-strong;
+                margin-bottom: 1rem;
+            }
+
+            .services-link-container-title--blue {
+                color: $badin-blue;
+            }
+
+            .services-link-container-title--orange {
+                color: #f19f69 ;
+            }
+
+            .services-link-container-title--green {
+                color: #4ecc92 ;
+            }
+
+            .services-link-container-text {
+                font-size: 2rem;
+                font-weight: $font-weight-strong;
+                color: #333;
+            }
+
+            .services-icon-wrapper {
+                height: 40px;
+                margin-top: .5rem;
+                display: flex;
+
+                .services-icon {
+                    display: inline-block;
+                    height: 100%;
+                    width: 40px;
+                    border: 1px solid black;
+                    border-radius: 10px;
+                    margin-left: .5rem;
+                }
+            }
+
+            .img-wrapper-up {
+                width: 160px;
+                height: 250px;
+                border: 1px solid black;
+                margin-top: 1.5rem;
+            }
+
+            .img-wrapper-mid {
+                width: 275px;
+                height: 250px;
+                border: 1px solid black;
+                margin-top: 1.5rem;
+            }
+            .img-wrapper-btm {
+                width: 250px;
+                height: 310px;
+                border: 1px solid black;
+                margin-top: 1.5rem;
+            }
+        }
+    }
+}
+
+.tabs-wrapper {
+    width: 100%;
+    height: 130vh;
+    position: relative;
+
+    .tabs-heading {
+        font-size: 5rem;
+        margin: 5rem 0rem 5rem 1.5rem;
+        @include font-primary-medium-italic;
+    }
+
+    .tabs-text {
+        font-size: 1.5rem;
+        font-family: $font-family-secondary;
+        font-weight: $font-weight-medium;
+        margin: 1.5rem;
+        margin-right: 3rem;
+        color: #9197ac;
+    }
+
+    .arrow-container-wrapper {
+        width: 10rem;
+        height: 5rem;
         position: absolute;
-        margin-left: 5%;
-        margin-top: 8rem;
+        margin-top: 2.5rem;
+        right: 1rem;
+        display: flex;
+
+        .left-arrow-container,
+        .right-arrow-container {
+            width: 50%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .left-arrow-container {
+
+            .arrow-line-point--up,
+            .arrow-line-point--dwn {
+                height: 3px;
+                width: 10px;
+                border-radius: 2px;
+                background-color: #cbcaca;
+                position: absolute;
+            }
+
+            .arrow-line-point--up {
+                translate: -6px -3px;
+                rotate: -45deg;
+            }
+
+            .arrow-line-point--dwn {
+                translate: -6px 3px;
+                rotate: 45deg;
+            }
+        }
+
+        .right-arrow-container {
+
+            .arrow-line {
+                background-color: $badin-blue;
+            }
+            .arrow-line-point--up,
+            .arrow-line-point--dwn {
+                height: 3px;
+                width: 10px;
+                border-radius: 2px;
+                background-color: $badin-blue;
+                position: absolute;
+            }
+
+            .arrow-line-point--up {
+                translate: 6px -3px;
+                rotate: 45deg;
+            }
+
+            .arrow-line-point--dwn {
+                translate: 6px 3px;
+                rotate: -45deg;
+            }
+        }
+
+        .arrow-line {
+            width: 20px;
+            height: 3px;
+            border-radius: 2px;
+            background-color: #cbcaca;
+        }
     }
 
-    .services-link-container--mid {
-        margin-top: 56rem;
-    }
+    .tabs-nav {
+        display: flex;
+        margin-top: 5rem;
+        width: 120vw;
+        transition: all .5s linear;
 
-    .services-link-container--btm {
-        margin-top: 104rem;
+        .tab {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            border: 1px solid black;
+            border-radius: 30px;
+            margin: 0 1rem;
+            margin-top: 50px;
+            transition: all .5s linear;
+        }
+
+        .tab.active {
+            width: 130px;
+            height: 130px;
+            margin-top: 0;
+        }
     }
 }
