@@ -555,7 +555,7 @@
   font-family: lust, "Courier", serif;
   font-weight: 600;
   font-size: 1.5rem;
-  margin: 5rem 1.5rem 5rem 1.5rem;
+  margin: 5rem 1.5rem 2.5rem 1.5rem;
   color: #4e5158;
 }
 .how-we-got .text-mid {
@@ -563,14 +563,14 @@
   font-weight: 600;
   font-size: 1.5rem;
   color: #4e5158;
-  margin: 0 1.5rem 5rem 1.5rem;
+  margin: 0 1.5rem 3rem 1.5rem;
 }
 .how-we-got .text-btm {
   font-family: lust, "Courier", serif;
   font-weight: 600;
   font-size: 1.5rem;
   color: #4e5158;
-  margin: 0 1.5rem 5rem 1rem;
+  margin: 0 1.5rem 5rem 1.5rem;
 }
 .how-we-got .img-wrapper {
   width: 80%;
@@ -580,6 +580,7 @@
   bottom: 1rem;
   left: 10%;
   border-radius: 30px;
+  overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   .how-we-got .img-wrapper {
@@ -587,6 +588,10 @@
     height: 470px;
     left: initial;
   }
+}
+.how-we-got .img-wrapper .how-we-got-img {
+  width: 100%;
+  height: 100%;
 }
 
 .services-home {
@@ -684,36 +689,40 @@
   font-weight: 700;
   color: #333;
 }
-.services-home .services-container-list .services-link-container .services-icon-wrapper {
+.services-home .services-container-list .services-link-container .services-icon-list {
   height: 40px;
   margin-top: 0.5rem;
   display: flex;
 }
-.services-home .services-container-list .services-link-container .services-icon-wrapper .services-icon {
+.services-home .services-container-list .services-link-container .services-icon-list .services-icon {
   display: inline-block;
   height: 100%;
   width: 40px;
-  border: 1px solid black;
   border-radius: 10px;
   margin-left: 0.5rem;
+}
+.services-home .services-container-list .services-link-container .services-icon-list .services-icon .services-icon-img {
+  width: 100%;
+  height: 100%;
 }
 .services-home .services-container-list .services-link-container .img-wrapper-up {
   width: 160px;
   height: 250px;
-  border: 1px solid black;
   margin-top: 1.5rem;
 }
 .services-home .services-container-list .services-link-container .img-wrapper-mid {
   width: 275px;
   height: 250px;
-  border: 1px solid black;
   margin-top: 1.5rem;
 }
 .services-home .services-container-list .services-link-container .img-wrapper-btm {
   width: 250px;
   height: 310px;
-  border: 1px solid black;
   margin-top: 1.5rem;
+}
+.services-home .services-container-list .services-link-container .big-img {
+  width: 100%;
+  height: 100%;
 }
 
 .tabs-wrapper {

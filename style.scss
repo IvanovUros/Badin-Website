@@ -460,7 +460,7 @@
         font-family: $font-family-secondary;
         font-weight: $font-weight-medium;
         font-size: 1.5rem;
-        margin: 5rem 1.5rem 5rem 1.5rem;
+        margin: 5rem 1.5rem 2.5rem 1.5rem;
         color: #4e5158;
     }
 
@@ -469,7 +469,7 @@
         font-weight: $font-weight-medium;
         font-size: 1.5rem;
         color: #4e5158;
-        margin: 0 1.5rem 5rem 1.5rem;
+        margin: 0 1.5rem 3rem 1.5rem;
     }
 
     .text-btm {
@@ -477,7 +477,7 @@
         font-weight: $font-weight-medium;
         font-size: 1.5rem;
         color: #4e5158;
-        margin: 0 1.5rem 5rem 1.0rem;
+        margin: 0 1.5rem 5rem 1.5rem;
     }
 
     .img-wrapper {
@@ -488,10 +488,16 @@
         bottom: 1rem;
         left: 10%;
         border-radius: 30px;
+        overflow: hidden;
         @media  screen and (min-width:$tablet) {
             width: 700px;
             height: 470px;
             left: initial;
+        }
+
+        .how-we-got-img {
+            width: 100%;
+            height: 100%;
         }
     }
 }
@@ -576,7 +582,7 @@
                 color: #333;
             }
 
-            .services-icon-wrapper {
+            .services-icon-list {
                 height: 40px;
                 margin-top: .5rem;
                 display: flex;
@@ -585,30 +591,37 @@
                     display: inline-block;
                     height: 100%;
                     width: 40px;
-                    border: 1px solid black;
                     border-radius: 10px;
                     margin-left: .5rem;
+
+                    .services-icon-img {
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
             }
 
             .img-wrapper-up {
                 width: 160px;
                 height: 250px;
-                border: 1px solid black;
                 margin-top: 1.5rem;
             }
 
             .img-wrapper-mid {
                 width: 275px;
                 height: 250px;
-                border: 1px solid black;
                 margin-top: 1.5rem;
             }
+
             .img-wrapper-btm {
                 width: 250px;
                 height: 310px;
-                border: 1px solid black;
                 margin-top: 1.5rem;
+            }
+
+            .big-img {
+                width: 100%;
+                height: 100%;
             }
         }
     }
