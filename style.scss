@@ -370,7 +370,7 @@
 .clients {
     width: 100%;
     height: 100vh;
-    background-color: #ecf5ff;
+    background-color: $secondary-background-color ;
     position: relative;
     display: flex;
     justify-content: center;
@@ -401,13 +401,20 @@
             float: left; 
             width: 45vw;
             height: calc(100%/7);
-            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             @media screen and (min-width:$tablet) {
                 width: calc(100%/3);
                 margin-bottom: .5rem;
             }
             @media screen and (min-width:$laptop) {
                 width: calc(100%/5);
+            }
+
+            .client-logo {
+                width: 100%;
+                height: 80%;
             }
         }
 
@@ -492,7 +499,7 @@
 .services-home {
     width: 100%;
     height: 260vh;
-    background-color: #ecf5ff;
+    background-color: $secondary-background-color;
     position: relative;
     padding-top: 1rem;
 
@@ -609,8 +616,9 @@
 
 .tabs-wrapper {
     width: 100%;
-    height: 130vh;
+    height: 115vh;
     position: relative;
+    overflow: hidden;
 
     .tabs-heading {
         font-size: 5rem;
@@ -634,6 +642,7 @@
         margin-top: 2.5rem;
         right: 1rem;
         display: flex;
+        z-index: 1;
 
         .left-arrow-container,
         .right-arrow-container {
@@ -645,6 +654,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+
         }
 
         .left-arrow-container {
@@ -656,6 +666,7 @@
                 border-radius: 2px;
                 background-color: #cbcaca;
                 position: absolute;
+                transition: all .5s ease-in-out;
             }
 
             .arrow-line-point--up {
@@ -681,6 +692,7 @@
                 border-radius: 2px;
                 background-color: $badin-blue;
                 position: absolute;
+                transition: all .5s ease-in-out;
             }
 
             .arrow-line-point--up {
@@ -699,6 +711,7 @@
             height: 3px;
             border-radius: 2px;
             background-color: #cbcaca;
+            transition: all .5s ease-in-out;
         }
     }
 
@@ -707,16 +720,21 @@
         margin-top: 5rem;
         width: 120vw;
         transition: all .5s linear;
+        z-index: 0;
 
         .tab {
             display: inline-block;
             width: 80px;
             height: 80px;
-            border: 1px solid black;
             border-radius: 30px;
             margin: 0 1rem;
             margin-top: 50px;
-            transition: all .5s linear;
+            transition: all .5s ease-in-out;
+
+            .tab-img {
+                width: 100%;
+                height: 100%;
+            }
         }
 
         .tab.active {
@@ -724,5 +742,80 @@
             height: 130px;
             margin-top: 0;
         }
+    }
+
+    .tab-description {
+        width: 95%;
+        position: relative;
+        margin-left: 2.5%;
+        margin-top: 5rem;
+
+        .tab-description-title {
+            font-size: 2.4rem;
+            @include font-primary-heavy();
+        }
+
+        .tab-description-subtitle {
+            font-size: 1.6rem;
+            color: #798099;
+            margin-top: .5rem;
+            @include font-primary-heavy();
+        }
+
+        .tab-description-text {
+            font-size: 2rem;
+            margin-top: .5rem;
+            @include font-primary-medium-italic();
+        }
+    }
+}
+
+.hire-us {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    background-color: $secondary-background-color;
+    padding-top: .5rem;
+
+    .hire-us-heading {
+        font-size: 5rem;
+        @include font-secondary-italic;
+        font-weight: $font-weight-strong;
+        margin: 2rem 0 5rem 2.5rem;
+        position: relative;
+        z-index: 2;
+
+        &::before {
+            content: 'Need our help?';
+            translate: 5px -30px;
+            position: absolute;
+            white-space: nowrap;
+            font-size: 5rem;
+            font-family: $font-family-secondary;
+            font-weight: $font-weight-strong;
+            color: #f0f1f4;
+            z-index: 0;
+        }
+    }
+
+    .hire-us-text {
+        font-size: 1.6rem;
+        font-family: $font-family-primary;
+        font-weight: $font-weight-medium;
+        width: 95%;
+        margin: 0 auto;
+        color: #ced0d9;
+    }
+
+    .hire-us-btn {
+        @include btn;
+        background-color: $badin-blue;
+        width: 35%;
+        left: initial;
+        right: initial;
+        margin-top: 2.5rem;
+        margin-left: 2.5%;
+        font-size: 2rem;
+        color: $white;
     }
 }

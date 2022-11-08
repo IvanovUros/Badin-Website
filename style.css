@@ -444,7 +444,7 @@
 .clients {
   width: 100%;
   height: 100vh;
-  background-color: #ecf5ff;
+  background-color: #f9fafe;
   position: relative;
   display: flex;
   justify-content: center;
@@ -482,7 +482,9 @@
   float: left;
   width: 45vw;
   height: 14.2857142857%;
-  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media screen and (min-width: 768px) {
   .clients .clients-list .client-logo-wrapper,
@@ -498,6 +500,12 @@
 .clients .clients-list .client-logo-wrapper--last-laptop {
     width: 20%;
   }
+}
+.clients .clients-list .client-logo-wrapper .client-logo,
+.clients .clients-list .client-logo-wrapper--last .client-logo,
+.clients .clients-list .client-logo-wrapper--last-laptop .client-logo {
+  width: 100%;
+  height: 80%;
 }
 .clients .clients-list .client-logo-wrapper--last {
   margin-left: 22.5vw;
@@ -584,7 +592,7 @@
 .services-home {
   width: 100%;
   height: 260vh;
-  background-color: #ecf5ff;
+  background-color: #f9fafe;
   position: relative;
   padding-top: 1rem;
 }
@@ -710,8 +718,9 @@
 
 .tabs-wrapper {
   width: 100%;
-  height: 130vh;
+  height: 115vh;
   position: relative;
+  overflow: hidden;
 }
 .tabs-wrapper .tabs-heading {
   font-size: 5rem;
@@ -735,6 +744,7 @@
   margin-top: 2.5rem;
   right: 1rem;
   display: flex;
+  z-index: 1;
 }
 .tabs-wrapper .arrow-container-wrapper .left-arrow-container,
 .tabs-wrapper .arrow-container-wrapper .right-arrow-container {
@@ -754,6 +764,7 @@
   border-radius: 2px;
   background-color: #cbcaca;
   position: absolute;
+  transition: all 0.5s ease-in-out;
 }
 .tabs-wrapper .arrow-container-wrapper .left-arrow-container .arrow-line-point--up {
   translate: -6px -3px;
@@ -773,6 +784,7 @@
   border-radius: 2px;
   background-color: #317ade;
   position: absolute;
+  transition: all 0.5s ease-in-out;
 }
 .tabs-wrapper .arrow-container-wrapper .right-arrow-container .arrow-line-point--up {
   translate: 6px -3px;
@@ -787,25 +799,118 @@
   height: 3px;
   border-radius: 2px;
   background-color: #cbcaca;
+  transition: all 0.5s ease-in-out;
 }
 .tabs-wrapper .tabs-nav {
   display: flex;
   margin-top: 5rem;
   width: 120vw;
   transition: all 0.5s linear;
+  z-index: 0;
 }
 .tabs-wrapper .tabs-nav .tab {
   display: inline-block;
   width: 80px;
   height: 80px;
-  border: 1px solid black;
   border-radius: 30px;
   margin: 0 1rem;
   margin-top: 50px;
-  transition: all 0.5s linear;
+  transition: all 0.5s ease-in-out;
+}
+.tabs-wrapper .tabs-nav .tab .tab-img {
+  width: 100%;
+  height: 100%;
 }
 .tabs-wrapper .tabs-nav .tab.active {
   width: 130px;
   height: 130px;
   margin-top: 0;
+}
+.tabs-wrapper .tab-description {
+  width: 95%;
+  position: relative;
+  margin-left: 2.5%;
+  margin-top: 5rem;
+}
+.tabs-wrapper .tab-description .tab-description-title {
+  font-size: 2.4rem;
+  font-family: futura-pt, "Arial Condensed", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.tabs-wrapper .tab-description .tab-description-subtitle {
+  font-size: 1.6rem;
+  color: #798099;
+  margin-top: 0.5rem;
+  font-family: futura-pt, "Arial Condensed", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.tabs-wrapper .tab-description .tab-description-text {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  font-family: futura-pt, "Arial Condensed", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.hire-us {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  background-color: #f9fafe;
+  padding-top: 0.5rem;
+}
+.hire-us .hire-us-heading {
+  font-size: 5rem;
+  font-family: lust, "Courier", serif;
+  font-weight: 700;
+  font-style: italic;
+  font-weight: 700;
+  margin: 2rem 0 5rem 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+.hire-us .hire-us-heading::before {
+  content: "Need our help?";
+  translate: 5px -30px;
+  position: absolute;
+  white-space: nowrap;
+  font-size: 5rem;
+  font-family: lust, "Courier", serif;
+  font-weight: 700;
+  color: #f0f1f4;
+  z-index: 0;
+}
+.hire-us .hire-us-text {
+  font-size: 1.6rem;
+  font-family: futura-pt, "Arial Condensed", sans-serif;
+  font-weight: 600;
+  width: 95%;
+  margin: 0 auto;
+  color: #ced0d9;
+}
+.hire-us .hire-us-btn {
+  width: 90%;
+  height: 5rem;
+  background-color: #fff;
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-weight: bold;
+  white-space: nowrap;
+  background-color: #317ade;
+  width: 35%;
+  left: initial;
+  right: initial;
+  margin-top: 2.5rem;
+  margin-left: 2.5%;
+  font-size: 2rem;
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */
