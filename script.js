@@ -11,7 +11,10 @@ const rightArrowPointDwn = document.getElementById('rightArrowPointDwn');
 const tabDescriptionTitle = document.querySelector('.tab-description-title');
 const tabDescriptionSubTitle = document.querySelector('.tab-description-subtitle');
 const tabDescriptionText = document.querySelector('.tab-description-text');
+const trustedClientLogo = Array.from(document.getElementsByClassName('trusted-logo-wrapper'));
+const trustedLogoCover = Array.from(document.getElementsByClassName('cover'));
 let tabIndicator = 0;
+let test = true;
 
 rightArrowBtn.addEventListener('click', () => {
     if(tabIndicator == 0) {
@@ -95,6 +98,48 @@ leftArrowBtn.addEventListener('click', () => {
     };
 });
 
+function trustedLogoAnimation () {
+    x = Math.floor(Math.random() * 13);
+    if (x < 11) {
+        y = x + 1;
+        z = x + 2;
+    } else if (x >= 11) {
+        y = x - 1;
+        z = x - 2;
+    };
+    // console.log(x);
+    trustedClientLogo[x].style.display = 'block';
+    trustedClientLogo[y].style.display = 'block';
+    trustedClientLogo[z].style.display = 'block';
+    setTimeout(function() {
+        trustedLogoCover[x].style.backgroundColor = 'transparent';
+        trustedLogoCover[y].style.backgroundColor = 'transparent';
+        trustedLogoCover[z].style.backgroundColor = 'transparent';
+        trustedClientLogo[x].style.translate = '0';
+        trustedClientLogo[y].style.translate = '0';
+        trustedClientLogo[z].style.translate = '0';
+        
+    },500);
+    setTimeout(function() {
+        trustedLogoCover[x].style.backgroundColor = '#f9fafe';
+        trustedLogoCover[y].style.backgroundColor = '#f9fafe';
+        trustedLogoCover[z].style.backgroundColor = '#f9fafe';
+        trustedClientLogo[x].style.translate = '0 -80px';
+        trustedClientLogo[y].style.translate = '0 -80px';
+        trustedClientLogo[z].style.translate = '0 -80px';
+    },1500);
+    setTimeout(function() {
+        trustedClientLogo.forEach(trustedClientLogo => {
+            trustedClientLogo.style.translate = '0 80px';
+          });
+        trustedClientLogo[x].style.display = 'none';
+        trustedClientLogo[y].style.display = 'none';
+        trustedClientLogo[z].style.display = 'none';
+    },2000);
+};
+
 onload = () => {
     tabs[0].classList.add('active');
+    trustedLogoAnimation();
+    window.setInterval(trustedLogoAnimation,2500);
 };
