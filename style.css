@@ -152,6 +152,13 @@
   opacity: 80%;
   z-index: 0;
 }
+.hero-main .animated-curcle-yellow {
+  background-color: yellow;
+  left: 55%;
+  top: 20%;
+  -webkit-animation: circle 30s linear infinite;
+          animation: circle 30s linear infinite;
+}
 @media screen and (min-width: 1366px) {
   .hero-main .animated-curcle-yellow {
     background-color: yellow;
@@ -161,6 +168,12 @@
             animation: circle 30s linear infinite;
   }
 }
+.hero-main .animated-curcle-blue {
+  background-color: blue;
+  left: 40%;
+  top: 50%;
+  animation: circle 20s linear infinite reverse;
+}
 @media screen and (min-width: 1366px) {
   .hero-main .animated-curcle-blue {
     background-color: blue;
@@ -169,6 +182,12 @@
     animation: circle 20s linear infinite reverse;
   }
 }
+.hero-main .animated-curcle-purple {
+  background-color: purple;
+  left: 15%;
+  top: 5%;
+  animation: circle 30s linear infinite reverse;
+}
 @media screen and (min-width: 1366px) {
   .hero-main .animated-curcle-purple {
     background-color: purple;
@@ -176,6 +195,12 @@
     top: 5%;
     animation: circle 30s linear infinite reverse;
   }
+}
+.hero-main .animated-curcle-green {
+  background-color: green;
+  top: 30%;
+  -webkit-animation: circle 20s linear infinite;
+          animation: circle 20s linear infinite;
 }
 @media screen and (min-width: 1366px) {
   .hero-main .animated-curcle-green {
@@ -467,12 +492,26 @@
 }
 .clients .clients-list {
   width: 90vw;
+  max-width: 550px;
   height: 90vh;
   list-style: none;
+  padding: 0 auto;
 }
 @media screen and (min-width: 768px) {
   .clients .clients-list {
+    max-width: initial;
     height: 80%;
+    width: 75%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .clients .clients-list {
+    width: 85%;
+    height: auto;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .clients .clients-list {
     width: 75%;
   }
 }
@@ -480,7 +519,7 @@
 .clients .clients-list .client-logo-wrapper--last,
 .clients .clients-list .client-logo-wrapper--last-laptop {
   float: left;
-  width: 45vw;
+  width: 50%;
   height: 14.2857142857%;
   display: flex;
   align-items: center;
@@ -492,6 +531,7 @@
 .clients .clients-list .client-logo-wrapper--last-laptop {
     width: 33.3333333333%;
     margin-bottom: 0.5rem;
+    height: 18.1818181818%;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -499,6 +539,7 @@
 .clients .clients-list .client-logo-wrapper--last,
 .clients .clients-list .client-logo-wrapper--last-laptop {
     width: 20%;
+    height: 28.5714285714%;
   }
 }
 .clients .clients-list .client-logo-wrapper .client-logo,
@@ -551,12 +592,23 @@
   font-style: italic;
   margin: 1.5rem;
 }
+@media screen and (min-width: 768px) {
+  .how-we-got .how-we-got-heading {
+    position: absolute;
+    left: 2.5%;
+  }
+}
 .how-we-got .text-top {
   font-family: lust, "Courier", serif;
   font-weight: 600;
   font-size: 1.5rem;
   margin: 5rem 1.5rem 2.5rem 1.5rem;
   color: #4e5158;
+}
+@media screen and (min-width: 768px) {
+  .how-we-got .text-top {
+    margin: 13rem 5% 2.5rem 5%;
+  }
 }
 .how-we-got .text-mid {
   font-family: lust, "Courier", serif;
@@ -565,12 +617,22 @@
   color: #4e5158;
   margin: 0 1.5rem 3rem 1.5rem;
 }
+@media screen and (min-width: 768px) {
+  .how-we-got .text-mid {
+    margin: 0 5% 2.5rem 5%;
+  }
+}
 .how-we-got .text-btm {
   font-family: lust, "Courier", serif;
   font-weight: 600;
   font-size: 1.5rem;
   color: #4e5158;
   margin: 0 1.5rem 5rem 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .how-we-got .text-btm {
+    margin: 0 5% 2.5rem 5%;
+  }
 }
 .how-we-got .img-wrapper {
   width: 80%;
@@ -730,6 +792,11 @@
   height: 115vh;
   position: relative;
   overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .tabs-wrapper {
+    padding: 0 1.5rem;
+  }
 }
 .tabs-wrapper .tabs-heading {
   font-size: 5rem;
@@ -899,6 +966,14 @@
   margin: 0 auto;
   color: #ced0d9;
 }
+@media screen and (min-width: 768px) {
+  .hire-us .hire-us-text {
+    width: 70%;
+    float: left;
+    margin-left: 2.5rem;
+    position: relative;
+  }
+}
 .hire-us .hire-us-btn {
   width: 90%;
   height: 5rem;
@@ -923,50 +998,61 @@
   font-size: 2rem;
   color: #fff;
 }
+@media screen and (min-width: 768px) {
+  .hire-us .hire-us-btn {
+    margin-top: 8rem;
+  }
+}
 .hire-us .trusted-wrapper {
-  width: 100%;
+  width: 100vw;
   height: 35vh;
+  position: relative;
   position: absolute;
   bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  overflow: hidden;
 }
-.hire-us .trusted {
+.hire-us .trusted-wrapper .trusted {
   font-size: 1.6rem;
+  width: 12rem;
   font-family: futura-pt, "Arial Condensed", sans-serif;
   font-weight: 600;
   color: #7c839c;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
-.hire-us .trusted-client-list {
+.hire-us .trusted-wrapper .trusted-client-list {
   height: 20vh;
   margin-top: 4rem;
   display: flex;
   align-items: center;
+  position: absolute;
+  -webkit-animation: trusted-list-animation 7s linear infinite alternate;
+          animation: trusted-list-animation 7s linear infinite alternate;
 }
-.hire-us .trusted-client-list .trusted-logo-wrapper {
+.hire-us .trusted-wrapper .trusted-client-list .trusted-logo-wrapper {
   float: left;
   list-style-type: none;
   width: 15rem;
   height: 5rem;
-  display: none;
   position: relative;
-  transition: all 0.5s ease-in-out;
-  translate: 0 80px;
 }
-.hire-us .trusted-client-list .trusted-logo-wrapper .trusted-logo {
+.hire-us .trusted-wrapper .trusted-client-list .trusted-logo-wrapper .trusted-logo {
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: 0;
 }
-.hire-us .trusted-client-list .trusted-logo-wrapper .cover {
-  width: 100%;
-  height: 100%;
-  background-color: #f9fafe;
-  position: absolute;
-  z-index: 1;
-  transition: all 0.5s ease-in-out;
+@-webkit-keyframes trusted-list-animation {
+  100% {
+    translate: calc(-100% + 100vw);
+  }
+}
+@keyframes trusted-list-animation {
+  100% {
+    translate: calc(-100% + 100vw);
+  }
 }
 
 .career {
@@ -977,6 +1063,11 @@
   display: flex;
   flex-direction: column;
   padding-top: 5rem;
+}
+@media screen and (min-width: 768px) {
+  .career {
+    height: 120vh;
+  }
 }
 .career .career-heading {
   font-size: 5rem;
@@ -1002,10 +1093,17 @@
 .career .career-card {
   width: 450px;
   height: 160px;
+  position: relative;
   background-color: #fff;
   margin: 0 auto 2rem auto;
   box-shadow: #317ade 1px 1px 5px 0.5px;
   border-radius: 10px;
+}
+@media screen and (min-width: 768px) {
+  .career .career-card {
+    width: 700px;
+    height: 120px;
+  }
 }
 .career .career-card .career-card-text {
   font-size: 1.8rem;
@@ -1013,6 +1111,12 @@
   font-weight: 700;
   font-style: normal;
   margin: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .career .career-card .career-card-text {
+    width: 65%;
+    position: absolute;
+  }
 }
 .career .career-card .apply-btn {
   width: 90%;
@@ -1036,6 +1140,11 @@
   font-size: 1.7rem;
   justify-content: initial;
   padding-left: 2.5rem;
+}
+@media screen and (min-width: 768px) {
+  .career .career-card .apply-btn {
+    margin: initial;
+  }
 }
 .career .career-card .apply-btn .apply-arrow-container {
   width: 50px;
@@ -1098,6 +1207,11 @@
   display: flex;
   flex-direction: column;
 }
+@media screen and (min-width: 768px) {
+  .gallery {
+    height: 410vh;
+  }
+}
 .gallery .gallery-img-wrapper,
 .gallery .gallery-img-wrapper--big {
   width: 450px;
@@ -1107,8 +1221,21 @@
   border-radius: 20px;
   overflow: hidden;
 }
+@media screen and (min-width: 768px) {
+  .gallery .gallery-img-wrapper,
+.gallery .gallery-img-wrapper--big {
+    width: 700px;
+    height: 460px;
+    margin: 2rem auto 1rem auto;
+  }
+}
 .gallery .gallery-img-wrapper--big {
   height: 700px;
+}
+@media screen and (min-width: 768px) {
+  .gallery .gallery-img-wrapper--big {
+    height: 1110px;
+  }
 }
 
 .experience {
@@ -1184,6 +1311,11 @@
   position: relative;
   padding-top: 5rem;
 }
+@media screen and (min-width: 768px) {
+  .contacts {
+    height: 70vh;
+  }
+}
 .contacts .contacts-heading {
   font-size: 5rem;
   font-family: lust, "Courier", serif;
@@ -1205,6 +1337,12 @@
   color: #f0f1f4;
   z-index: 0;
 }
+@media screen and (min-width: 768px) {
+  .contacts .contacts-heading::before {
+    width: 60%;
+    translate: 5px -40px;
+  }
+}
 .contacts .info-link {
   font-size: 4rem;
   font-family: futura-pt, "Arial Condensed", sans-serif;
@@ -1218,6 +1356,13 @@
   height: 270px;
   border: 1px solid black;
   margin: 8rem 0 0 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .contacts .contacts-img-wrapper {
+    position: absolute;
+    right: 2.5rem;
+    bottom: 1rem;
+  }
 }
 
 .footer {

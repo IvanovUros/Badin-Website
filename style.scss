@@ -149,6 +149,10 @@
     }
 
     .animated-curcle-yellow {
+        background-color: yellow;
+        left: 55%;
+        top: 20%;
+        animation: circle 30s linear infinite ; 
         @media screen and (min-width:$desktop) {
             background-color: yellow;
             left: 55%;
@@ -158,6 +162,10 @@
     }
 
     .animated-curcle-blue {
+        background-color: blue;
+        left: 40%;
+        top: 50%;
+        animation: circle 20s linear infinite reverse ;
         @media screen and (min-width:$desktop) {
             background-color: blue;
             left: 40%;
@@ -167,6 +175,10 @@
     }
 
     .animated-curcle-purple {
+        background-color: purple;
+        left: 15%;
+        top: 5%;
+        animation: circle 30s linear infinite reverse;
         @media screen and (min-width:$desktop) {
             background-color: purple;
             left: 15%;
@@ -176,6 +188,9 @@
     }
 
     .animated-curcle-green {
+        background-color: green;
+        top: 30%;
+        animation: circle 20s linear infinite ;
         @media screen and (min-width:$desktop) {
             background-color: green;
             top: 30%;
@@ -387,19 +402,28 @@
 
     .clients-list {
         width: 90vw;
+        max-width: 550px;
         height: 90vh; 
         list-style: none;
+        padding: 0 auto;
         @media screen and (min-width:$tablet) {
+            max-width: initial;
             height: 80%;
             width: 75%;
         }
-
+        @media screen and (min-width:$laptop) {
+            width: 85%;
+            height: auto;
+        }
+        @media screen and (min-width:$desktop) {
+            width: 75%;
+        }
         
         .client-logo-wrapper,
         .client-logo-wrapper--last,
         .client-logo-wrapper--last-laptop {
             float: left; 
-            width: 45vw;
+            width: calc(100%/2);
             height: calc(100%/7);
             display: flex;
             align-items: center;
@@ -407,9 +431,11 @@
             @media screen and (min-width:$tablet) {
                 width: calc(100%/3);
                 margin-bottom: .5rem;
+                height: calc(100%/ 5.5);
             }
             @media screen and (min-width:$laptop) {
                 width: calc(100%/5);
+                height: calc(100%/3.5);
             }
 
             .client-logo {
@@ -454,6 +480,10 @@
         font-size: 5rem;
         @include font-primary-medium-italic;
         margin: 1.5rem;
+        @media screen and (min-width:$tablet) {
+            position: absolute;
+            left: 2.5%;           
+        }
     }
 
     .text-top {
@@ -462,6 +492,9 @@
         font-size: 1.5rem;
         margin: 5rem 1.5rem 2.5rem 1.5rem;
         color: #4e5158;
+        @media screen and (min-width:$tablet) {
+            margin: 13rem 5% 2.5rem 5%;          
+        }
     }
 
     .text-mid {
@@ -470,6 +503,9 @@
         font-size: 1.5rem;
         color: #4e5158;
         margin: 0 1.5rem 3rem 1.5rem;
+        @media screen and (min-width:$tablet) {
+            margin: 0 5% 2.5rem 5%;          
+        }
     }
 
     .text-btm {
@@ -478,6 +514,9 @@
         font-size: 1.5rem;
         color: #4e5158;
         margin: 0 1.5rem 5rem 1.5rem;
+        @media screen and (min-width:$tablet) {
+            margin: 0 5% 2.5rem 5%;          
+        }
     }
 
     .img-wrapper {
@@ -632,11 +671,14 @@
     height: 115vh;
     position: relative;
     overflow: hidden;
+    @media screen and (min-width:$tablet) {
+        padding: 0 1.5rem;
+    }
 
     .tabs-heading {
         font-size: 5rem;
         margin: 5rem 0rem 5rem 1.5rem;
-        @include font-primary-medium-italic;
+        @include font-primary-medium-italic;     
     }
 
     .tabs-text {
@@ -667,7 +709,6 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-
         }
 
         .left-arrow-container {
@@ -818,6 +859,12 @@
         width: 95%;
         margin: 0 auto;
         color: #ced0d9;
+        @media screen and (min-width:$tablet) {
+            width: 70%;
+            float: left;
+            margin-left: 2.5rem;
+            position: relative;
+        }
     }
 
     .hire-us-btn {
@@ -830,55 +877,59 @@
         margin-left: 2.5%;
         font-size: 2rem;
         color: $white;
+        @media screen and(min-width:$tablet) {
+            margin-top: 8rem;
+        }
     }
 
     .trusted-wrapper {
-        width: 100%;
+        width: 100vw;
         height: 35vh;
+        position: relative;
         position: absolute;
         bottom: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+        overflow: hidden;
+        
+        .trusted {
+            font-size: 1.6rem;
+            width: 12rem;
+            font-family: $font-family-primary;
+            font-weight: $font-weight-medium;
+            color: #7c839c ;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;   
+        }
 
-    .trusted {
-        font-size: 1.6rem;
-        font-family: $font-family-primary;
-        font-weight: $font-weight-medium;
-        color: #7c839c ;
-    }
-
-    .trusted-client-list {
-        height: 20vh;
-        margin-top: 4rem;
-        display: flex;
-        align-items: center;
-
-        .trusted-logo-wrapper {
-            float: left;
-            list-style-type: none;
-            width: 15rem;
-            height: 5rem;
-            display: none;
-            position: relative;
-            transition: all .5s ease-in-out;
-            translate: 0 80px;
-
-            .trusted-logo {
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                z-index: 0;
+        .trusted-client-list {
+            height: 20vh;
+            margin-top: 4rem;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            animation: trusted-list-animation 7s linear infinite alternate;
+            
+            .trusted-logo-wrapper {
+                float: left;
+                list-style-type: none;
+                width: 15rem;
+                height: 5rem;
+                // display: none;
+                position: relative;
+    
+                .trusted-logo {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    z-index: 0;
+                }
             }
-
-            .cover {
-                width: 100%;
-                height: 100%;
-                background-color: $secondary-background-color;
-                position: absolute;
-                z-index: 1;
-                transition: all .5s ease-in-out;
+    
+            @keyframes trusted-list-animation {
+                100% {
+                    translate: calc(-100% + 100vw);
+                }
             }
         }
     }
@@ -892,6 +943,9 @@
     display: flex;
     flex-direction: column;
     padding-top: 5rem;
+    @media screen and (min-width:$tablet) {
+        height: 120vh;
+    }
 
     .career-heading {
         font-size: 5rem;
@@ -900,6 +954,7 @@
         margin: 5rem 0 5rem 2.5rem;
         position: relative;
         z-index: 1;
+        
 
         &::before {
             content: 'Open Positions';
@@ -917,15 +972,24 @@
     .career-card {
         width: 450px;
         height: 160px;
+        position: relative;
         background-color: $white;
         margin: 0 auto 2rem auto;
         box-shadow: $badin-blue 1px 1px 5px .5px;
         border-radius: 10px;
+        @media screen and (min-width:$tablet) {
+            width: 700px;
+            height: 120px;
+        }
 
         .career-card-text {
             font-size: 1.8rem;
             @include font-primary-heavy;
             margin: 1rem;
+            @media screen and (min-width:$tablet) {
+                width: 65%;
+                position: absolute;
+            }
         }
 
         .apply-btn {
@@ -937,6 +1001,10 @@
             font-size: 1.7rem;
             justify-content: initial;
             padding-left: 2.5rem;
+            @media screen and (min-width:$tablet) {
+                margin: initial;
+                
+            }
 
             .apply-arrow-container {
                 width: 50px;
@@ -994,6 +1062,9 @@
     padding: 5rem 0;
     display: flex;
     flex-direction: column;
+    @media screen and (min-width:$tablet) {
+        height: 410vh;
+    }
 
     .gallery-img-wrapper,
     .gallery-img-wrapper--big {
@@ -1003,10 +1074,18 @@
         margin: 5rem auto 2.5rem auto;
         border-radius: 20px;
         overflow: hidden;
+        @media screen and (min-width:$tablet) {
+            width: 700px;
+            height: 460px;
+            margin: 2rem auto 1rem auto;
+        }
     }
 
     .gallery-img-wrapper--big {
         height: 700px;
+        @media screen and (min-width:$tablet) {
+            height: 1110px;
+        }
     }
 }
 
@@ -1076,6 +1155,9 @@
     height: 115vh;
     position: relative;
     padding-top: 5rem;
+    @media screen and (min-width:$tablet) {
+        height: 70vh;
+    }
 
     .contacts-heading {
         font-size: 5rem;
@@ -1084,6 +1166,9 @@
         margin: 5rem 0 5rem 1.5rem;
         position: relative;
         z-index: 1;
+        @media screen and (min-width:$tablet) {
+            
+        }
 
         &::before {
             content: 'Are you ready?';
@@ -1095,6 +1180,10 @@
             font-weight: $font-weight-strong;
             color: #f0f1f4;
             z-index: 0;
+            @media screen and (min-width:$tablet) {
+                width: 60%;
+                translate: 5px -40px;
+            }
         }
     }
 
@@ -1110,6 +1199,11 @@
         height: 270px;
         border: 1px solid black;
         margin: 8rem 0 0 1.5rem;
+        @media screen and (min-width:$tablet) {
+            position: absolute;
+            right: 2.5rem;
+            bottom: 1rem;
+        }
     }
 }
 
