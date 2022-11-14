@@ -1098,6 +1098,8 @@
   margin: 0 auto 2rem auto;
   box-shadow: #317ade 1px 1px 5px 0.5px;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
 }
 @media screen and (min-width: 768px) {
   .career .career-card {
@@ -1116,6 +1118,7 @@
   .career .career-card .career-card-text {
     width: 65%;
     position: absolute;
+    top: 0;
   }
 }
 .career .career-card .apply-btn {
@@ -1144,6 +1147,11 @@
 @media screen and (min-width: 768px) {
   .career .career-card .apply-btn {
     margin: initial;
+    left: initial;
+    right: 0;
+    margin: 1rem;
+    width: 17.5rem;
+    padding-left: 5rem;
   }
 }
 .career .career-card .apply-btn .apply-arrow-container {
@@ -1153,6 +1161,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .career .career-card .apply-btn .apply-arrow-container {
+    margin-left: 2rem;
+  }
 }
 .career .career-card .apply-btn .apply-arrow-container .apply-arrow-line {
   width: 20px;
