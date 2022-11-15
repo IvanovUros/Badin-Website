@@ -15,6 +15,11 @@ const trustedClientLogo = Array.from(document.getElementsByClassName('trusted-lo
 const trustedLogoCover = Array.from(document.getElementsByClassName('cover'));
 let tabIndicator = 0;
 let test = true;
+let screenWidth = screen.width;
+
+window.addEventListener('resize', () => {
+    screenWidth = screen.width;
+});
 
 rightArrowBtn.addEventListener('click', () => {
     if(tabIndicator == 0) {

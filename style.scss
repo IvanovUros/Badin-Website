@@ -246,9 +246,13 @@
         color: #333;
         @media  screen and (min-width:$tablet) {
             width: 200px;
+            left: initial;
+            right: initial;
+            margin-left: 2rem;
         }
         @media  screen and (min-width:$laptop) {
-            left: 3rem;
+            left: 1rem;
+            
         }
         @media  screen and(min-width:$desktop) {
             left: 15rem;
@@ -265,7 +269,7 @@
         @media  screen and (min-width:$tablet) {
             width: 200px;
             margin-top: 1rem;
-            margin-left: 25rem;
+            margin-left: 23rem;
         }
         @media  screen and (min-width:$laptop) {
             margin-left: 20rem;
@@ -469,11 +473,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
     @media screen and (min-width:$tablet) {
-        height: 150vh;    
+        height: 150vh; 
     }
     @media screen and (min-width:$laptop) {
-        height: 160vh;
+        height: 210vh;
     }
 
     .how-we-got-heading {
@@ -483,6 +488,12 @@
         @media screen and (min-width:$tablet) {
             position: absolute;
             left: 2.5%;           
+        }
+        @media screen and (min-width:$laptop) {
+            font-size: 9rem;
+            margin-top: 60rem;
+            width: 40rem;
+            margin-left: 0;
         }
     }
 
@@ -495,6 +506,14 @@
         @media screen and (min-width:$tablet) {
             margin: 13rem 5% 2.5rem 5%;          
         }
+        @media screen and (min-width:$laptop) {
+            font-size: 2rem;
+            position: absolute;
+            margin-top: 65rem;
+            right: 0;
+            margin-right: 0;
+            width: 60%;
+        }
     }
 
     .text-mid {
@@ -505,6 +524,14 @@
         margin: 0 1.5rem 3rem 1.5rem;
         @media screen and (min-width:$tablet) {
             margin: 0 5% 2.5rem 5%;          
+        }
+        @media screen and (min-width:$laptop) {
+            position: absolute;
+            font-size: 2rem;
+            margin-top: 90rem;
+            width: 50rem;
+            left: 3rem;
+            margin-left: 0;
         }
     }
 
@@ -517,26 +544,53 @@
         @media screen and (min-width:$tablet) {
             margin: 0 5% 2.5rem 5%;          
         }
+        @media screen and (min-width:$laptop) {
+            position: absolute;
+            font-size: 2rem;
+            width: 50rem;
+            left: 3rem;
+            margin-top: 110rem;
+            margin-left: 0;
+        }
     }
 
     .img-wrapper {
         width: 80%;
         height: 30%;
         position: absolute;
-        border: 1px solid black;
         bottom: 1rem;
         left: 10%;
         border-radius: 30px;
         overflow: hidden;
+        box-shadow: 0 17px 35px #cfcfcf;
         @media  screen and (min-width:$tablet) {
             width: 700px;
             height: 470px;
             left: initial;
         }
+        @media screen and (min-width:$laptop) { 
+            width: 510px;
+            height: 340px;
+            right: -30px;
+        }
 
         .how-we-got-img {
             width: 100%;
             height: 100%;
+        }
+    }
+
+    .img-wrapper--laptop {
+        display: none;
+        @media screen and (min-width:$laptop) {
+            display: block;
+            width: 770px;
+            height: 560px;
+            border: 1px solid black;
+            position: absolute;
+            border-radius: 30px;
+            left: 3rem;
+            box-shadow: 0 17px 35px #cfcfcf;
         }
     }
 }
@@ -547,6 +601,9 @@
     background-color: $secondary-background-color;
     position: relative;
     padding-top: 1rem;
+    @media screen and (min-width:$laptop) {
+        height: 170vh;
+    }
 
     .services-heading {
         font-size: 5rem;
@@ -554,6 +611,10 @@
         margin: 5rem 0rem 5rem 1.5rem;
         @media screen and (min-width:$tablet) {
             margin-left: 4rem;
+        }
+        @media screen and (min-width:$laptop) {
+            font-size: 7rem;
+            width: 40rem;
         }
     }
 
@@ -565,6 +626,10 @@
         margin: 1.5rem;
         @media screen and (min-width:$tablet) {
             margin: 1.5rem 4rem;
+        }
+        @media screen and (min-width:$laptop) {
+            font-size: 2rem;
+            width: 75rem;
         }
     }
 
@@ -579,6 +644,12 @@
         @media screen and (min-width:$tablet) {
             margin-left: 3rem;
         }
+        @media screen and (min-width:$laptop) {
+            top: 5rem;
+            width: 300px;
+            left: initial;
+            right: 4rem;
+        }
     }
 
     .services-container-list {
@@ -586,13 +657,21 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        @media screen and (min-width:$laptop) {
+            flex-direction: row;
+        }
 
         .services-link-container  {
             width: 95%;
             margin-top: 8rem;
             text-decoration: none;
+            position: relative;
             @media screen and (min-width:$tablet) {
                 margin-left: 3rem;
+            }
+            @media screen and (min-width:$laptop) {
+                width: 300px;
+                height: 530px;
             }
 
             .services-link-container-title--blue,
@@ -625,6 +704,9 @@
                 height: 40px;
                 margin-top: .5rem;
                 display: flex;
+                @media screen and (min-width:$laptop) {
+                    margin-top: 7rem;   
+                }
 
                 .services-icon {
                     display: inline-block;
@@ -656,6 +738,15 @@
                 width: 250px;
                 height: 310px;
                 margin-top: 1.5rem;
+            }
+
+            .img-wrapper-up,
+            .img-wrapper-mid,
+            .img-wrapper-btm {
+                @media screen and (min-width:$laptop) {
+                    position: absolute;
+                    bottom: 0;
+                }
             }
 
             .big-img {
@@ -946,6 +1037,9 @@
     @media screen and (min-width:$tablet) {
         height: 120vh;
     }
+    @media screen and (min-width:$laptop) {
+        height: 150vh;
+    }
 
     .career-heading {
         font-size: 5rem;
@@ -954,6 +1048,7 @@
         margin: 5rem 0 5rem 2.5rem;
         position: relative;
         z-index: 1;
+        
         
 
         &::before {
@@ -966,6 +1061,9 @@
             font-weight: $font-weight-strong;
             color: #f0f1f4;
             z-index: 0;
+            @media screen and (min-width:$laptop) {
+                translate: 5px -35px;
+            }
         }
     }
 
@@ -983,6 +1081,10 @@
             width: 700px;
             height: 120px;
         }
+        @media screen and (min-width:$laptop) {
+            width: 960px;
+            height: 190px;
+        }
 
         .career-card-text {
             font-size: 1.8rem;
@@ -992,6 +1094,10 @@
                 width: 65%;
                 position: absolute;
                 top: 0;
+            }
+            @media screen and (min-width:$laptop) {
+                font-size: 3rem;
+                top: 20%;
             }
         }
 
@@ -1063,6 +1169,9 @@
         margin: 0 auto;
         color: $white;
         font-size: 2rem;
+        @media screen and (min-width:$laptop) {
+            width: 260px;
+        }
     }
 }
 
@@ -1075,12 +1184,19 @@
     @media screen and (min-width:$tablet) {
         height: 410vh;
     }
+    @media screen and (min-width:$laptop) {
+        height: 110vh;
+        padding: 0;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
 
     .gallery-img-wrapper,
     .gallery-img-wrapper--big {
         width: 450px;
         height: 300px;
-        border: 1px solid black;
         margin: 5rem auto 2.5rem auto;
         border-radius: 20px;
         overflow: hidden;
@@ -1097,6 +1213,82 @@
             height: 1110px;
         }
     }
+
+    .--laptop-left-top,
+    .--laptop-left-mid,
+    .--laptop-right-btm,
+    .--laptop-right-top {
+        @media screen and (min-width:$laptop) {
+            position: absolute;
+            width: 250px;
+            height: 170px; 
+        }
+    }
+
+    .--laptop-mid {
+        @media screen and (min-width:$laptop) {
+            position: absolute;
+            width: 270px;
+            height: 420px; 
+        }
+    }
+
+    .--laptop-left-top {
+        @media screen and (min-width:$laptop) {
+            left: 0;
+            top: 0;
+            margin-left: 5%;
+        }
+    }
+
+    .--laptop-left-mid {
+        @media screen and (min-width:$laptop) {
+            left: 0; 
+            top: 0;
+            margin-left: 5%;
+            margin-top: 20%;
+        }
+    }
+
+    .--laptop-right-btm {
+        @media screen and (min-width:$laptop) {
+            right: 0;
+            margin-top: 10rem;
+            margin-right: 5%;
+        }
+    }
+
+    .--laptop-left-btm {
+        display: none;
+        @media screen and (min-width:$laptop) {
+            display: block;
+            position: absolute;
+            border: 1px solid black;
+            left: 0;
+            bottom: 0;
+            margin-left: 5%;
+            margin-bottom: 10rem;
+            width: 220px;
+            height: 170px;
+        }
+    }
+
+    .--laptop-right-top {
+        display: none;
+        @media screen and (min-width:$laptop) {
+            display: block;
+            border: 1px solid black;
+            top: 0;
+            right: 0;
+            margin-right: 5%;
+            margin-top: 5rem;
+        }
+    }
+
+    .gallery-img {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .experience {
@@ -1106,6 +1298,9 @@
     padding-top: .5rem;
     overflow: hidden;
     position: relative;
+    @media screen and (min-width:$laptop) {
+        height: 80vh;
+    }
 
     .experience-heading {
         font-size: 5rem;
@@ -1113,7 +1308,12 @@
         font-weight: $font-weight-strong;
         margin: 7rem 0 5rem 2.5rem;
         color: $white;
-        position: relative;        
+        position: relative;
+        width: 40rem;
+        text-align: center;
+        @media screen and (min-width:$laptop) {
+            margin: 7rem auto 5rem auto;
+        }        
     }
 
     .tech-list-up,
@@ -1142,21 +1342,33 @@
 
     .tech-list-up {
         animation: tech-list-animation 50s linear infinite alternate ;
+        @media screen and (min-width:$laptop) {
+            margin-top: 5rem;
+        }
     }
 
     .tech-list-midup {
         margin-top: 12rem;
         animation: tech-list-animation 50s linear infinite alternate-reverse ;
+        @media screen and (min-width:$laptop) {
+            margin-top: 17rem;
+        }
     }
 
     .tech-list-middwn {
         margin-top: 24rem;
         animation: tech-list-animation 50s linear infinite alternate ;
+        @media screen and (min-width:$laptop) {
+            display: none;
+        }
     }
 
     .tech-list-dwn {
         margin-top: 36rem;
         animation: tech-list-animation 50s linear infinite alternate-reverse ;
+        @media screen and (min-width:$laptop) {
+            display: none;
+        }
     }
 }
 
@@ -1211,8 +1423,14 @@
         margin: 8rem 0 0 1.5rem;
         @media screen and (min-width:$tablet) {
             position: absolute;
-            right: 2.5rem;
+            right: 0;
+            margin-right: 2.5rem;
             bottom: 1rem;
+        }
+        @media screen and (min-width:$laptop) {
+            width: 250px;
+            height: 210px;
+            margin-right: 10rem;
         }
     }
 }
@@ -1226,10 +1444,20 @@
     flex-direction: column;
     align-items: center;
     padding-top: 1rem;
+    overflow: hidden;
+    @media screen and (min-width:$laptop) {
+        height: 80vh;
+        flex-direction: row;
+        align-items: initial;
+    }
 
     .footer-media-wrapper {
         width: 95%;
         height: 30%;
+        @media screen and (min-width:$laptop) {
+            margin-top: 10rem;
+            margin-left: 5rem;
+        }
 
         .logo-wrapper {
             width: 10rem;
@@ -1267,6 +1495,12 @@
         left: 2.5%;
         top: 35%;
         list-style-type: none;
+        @media screen and (min-width:$laptop) {
+            right: 0;
+            margin-right: 35rem;
+            left: initial;
+            top: 20%;
+        }
 
         .footer-nav-title {
             font-size: 2rem;
@@ -1290,6 +1524,14 @@
         left: 2.5%;
         top: calc(40% + 25rem);;
         list-style-type: none;
+        @media screen and (min-width:$laptop) {
+            top: 20%;
+            left: initial;
+            right: initial;
+            right: 0;
+            margin-right: 2.5rem;
+            width: auto;
+        }
 
         .footer-info-title {
             font-size: 2rem;
