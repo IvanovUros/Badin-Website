@@ -13,6 +13,7 @@ const tabDescriptionSubTitle = document.querySelector('.tab-description-subtitle
 const tabDescriptionText = document.querySelector('.tab-description-text');
 const trustedClientLogo = Array.from(document.getElementsByClassName('trusted-logo-wrapper'));
 const trustedLogoCover = Array.from(document.getElementsByClassName('cover'));
+const tabBorderDots = Array.from(document.getElementsByClassName('border-dot'));
 let tabIndicator = 0;
 let test = true;
 let screenWidth = screen.width;
@@ -20,6 +21,111 @@ let screenWidth = screen.width;
 window.addEventListener('resize', () => {
     screenWidth = screen.width;
 });
+
+function tabsLaptopAnimation () {
+    if(screenWidth >= 1024) {
+        switch(tabIndicator) {
+            case 0:
+                tabs[0].classList.remove('active');
+                tabs[0].style.marginTop = '40rem';
+                tabs[0].style.marginLeft = '22.5rem';
+                tabs[1].classList.add('active');
+                tabs[1].style.marginTop = '20rem';
+                tabs[1].style.marginLeft = '22.5rem';
+                tabs[2].style.marginTop = '5rem';
+                tabs[2].style.marginLeft = '20rem';
+                tabs[3].style.marginTop = '15rem';
+                tabs[3].style.marginLeft = '2.5rem';
+                tabs[4].style.marginTop = '30rem';
+                tabs[4].style.marginLeft = '2.5rem';
+                tabBorderDots[1].classList.add('active');
+                tabBorderDots[0].classList.remove('active');
+                tabDescriptionTitle.innerHTML = 'Dragan Andrejic';
+                tabDescriptionSubTitle.innerHTML = 'Software Team Leader,Telekom Srbija';
+                tabIndicator++;
+                break;
+            case 1:
+                tabs[1].classList.remove('active');
+                tabs[1].style.marginTop = '40rem';
+                tabs[1].style.marginLeft = '22.5rem';
+                tabs[2].classList.add('active');
+                tabs[2].style.marginTop = '20rem';
+                tabs[2].style.marginLeft = '22.5rem';
+                tabs[3].style.marginTop = '5rem';
+                tabs[3].style.marginLeft = '20rem';
+                tabs[4].style.marginTop = '15rem';
+                tabs[4].style.marginLeft = '2.5rem';
+                tabs[0].style.marginTop = '30rem';
+                tabs[0].style.marginLeft = '2.5rem';
+                tabBorderDots[2].classList.add('active');
+                tabBorderDots[1].classList.remove('active');
+                tabDescriptionTitle.innerHTML = 'Nikola Ristovic';
+                tabDescriptionSubTitle.innerHTML = 'Head of Satellite Applications Unit,Raiffeisen bank';
+                tabIndicator++;
+                break;
+            case 2:
+                tabs[2].classList.remove('active');
+                tabs[2].style.marginTop = '40rem';
+                tabs[2].style.marginLeft = '22.5rem';
+                tabs[3].classList.add('active');
+                tabs[3].style.marginTop = '20rem';
+                tabs[3].style.marginLeft = '22.5rem';
+                tabs[4].style.marginTop = '5rem';
+                tabs[4].style.marginLeft = '20rem';
+                tabs[0].style.marginTop = '15rem';
+                tabs[0].style.marginLeft = '2.5rem';
+                tabs[1].style.marginTop = '30rem';
+                tabs[1].style.marginLeft = '2.5rem';
+                tabBorderDots[3].classList.add('active');
+                tabBorderDots[2].classList.remove('active');
+                tabDescriptionTitle.innerHTML = 'Geordie Lindsay-Russell';
+                tabDescriptionSubTitle.innerHTML = 'Business Analyst Project Managment';
+                tabIndicator++;
+                break;
+            case 3:
+                tabs[3].classList.remove('active');
+                tabs[3].style.marginTop = '40rem';
+                tabs[3].style.marginLeft = '22.5rem';
+                tabs[4].classList.add('active');
+                tabs[4].style.marginTop = '20rem';
+                tabs[4].style.marginLeft = '22.5rem';
+                tabs[0].style.marginTop = '5rem';
+                tabs[0].style.marginLeft = '20rem';
+                tabs[1].style.marginTop = '15rem';
+                tabs[1].style.marginLeft = '2.5rem';
+                tabs[2].style.marginTop = '30rem';
+                tabs[2].style.marginLeft = '2.5rem';
+                tabBorderDots[4].classList.add('active');
+                tabBorderDots[3].classList.remove('active');
+                tabDescriptionTitle.innerHTML = 'Fangsin Lim';
+                tabDescriptionSubTitle.innerHTML = 'Coo Tranxactor';
+                tabIndicator++;
+                break;
+            case 4:
+                tabs[4].classList.remove('active');
+                tabs[4].style.marginTop = '40rem';
+                tabs[4].style.marginLeft = '22.5rem';
+                tabs[0].classList.add('active');
+                tabs[0].style.marginTop = '20rem';
+                tabs[0].style.marginLeft = '22.5rem';
+                tabs[1].style.marginTop = '5rem';
+                tabs[1].style.marginLeft = '20rem';
+                tabs[2].style.marginTop = '15rem';
+                tabs[2].style.marginLeft = '2.5rem';
+                tabs[3].style.marginTop = '30rem';
+                tabs[3].style.marginLeft = '2.5rem';
+                tabBorderDots[0].classList.add('active');
+                tabBorderDots[4].classList.remove('active');
+                tabDescriptionTitle.innerHTML = 'Karthik Rao';
+                tabDescriptionSubTitle.innerHTML = 'Head of technology,Eton Institute';
+                tabIndicator = 0;
+                break;
+
+        }
+        
+        
+    };
+};
 
 rightArrowBtn.addEventListener('click', () => {
     if(tabIndicator == 0) {
@@ -105,4 +211,8 @@ leftArrowBtn.addEventListener('click', () => {
 
 onload = () => {
     tabs[0].classList.add('active');
+    tabBorderDots[0].classList.add('active');
+    setInterval(() => {
+        tabsLaptopAnimation();
+    }, 4000);
 };

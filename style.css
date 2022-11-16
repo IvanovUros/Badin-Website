@@ -912,12 +912,23 @@
     padding: 0 1.5rem;
   }
 }
+@media screen and (min-width: 1024px) {
+  .tabs-wrapper {
+    height: 160vh;
+  }
+}
 .tabs-wrapper .tabs-heading {
   font-size: 5rem;
   margin: 5rem 0rem 5rem 1.5rem;
   font-family: futura-pt, "Arial Condensed", sans-serif;
   font-weight: 500;
   font-style: italic;
+}
+@media screen and (min-width: 1024px) {
+  .tabs-wrapper .tabs-heading {
+    font-size: 9rem;
+    width: 70rem;
+  }
 }
 .tabs-wrapper .tabs-text {
   font-size: 1.5rem;
@@ -927,6 +938,12 @@
   margin-right: 3rem;
   color: #9197ac;
 }
+@media screen and (min-width: 1024px) {
+  .tabs-wrapper .tabs-text {
+    font-size: 2rem;
+    width: 55rem;
+  }
+}
 .tabs-wrapper .arrow-container-wrapper {
   width: 10rem;
   height: 5rem;
@@ -935,6 +952,11 @@
   right: 1rem;
   display: flex;
   z-index: 1;
+}
+@media screen and (min-width: 1024px) {
+  .tabs-wrapper .arrow-container-wrapper {
+    display: none;
+  }
 }
 .tabs-wrapper .arrow-container-wrapper .left-arrow-container,
 .tabs-wrapper .arrow-container-wrapper .right-arrow-container {
@@ -998,6 +1020,12 @@
   transition: all 0.5s linear;
   z-index: 0;
 }
+@media screen and (min-width: 1024px) {
+  .tabs-wrapper .tabs-nav {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+}
 .tabs-wrapper .tabs-nav .tab {
   display: inline-block;
   width: 80px;
@@ -1007,14 +1035,98 @@
   margin-top: 50px;
   transition: all 0.5s ease-in-out;
 }
+@media screen and (min-width: 1024px) {
+  .tabs-wrapper .tabs-nav .tab {
+    position: absolute;
+    margin-left: 20rem;
+    width: 100px;
+    height: 100px;
+  }
+}
 .tabs-wrapper .tabs-nav .tab .tab-img {
   width: 100%;
   height: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .tabs-wrapper .tabs-nav .tab--first {
+    margin-left: 22.5rem;
+    margin-top: 20rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .tabs-wrapper .tabs-nav .tab--second {
+    margin-top: 5rem;
+    margin-left: 20rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .tabs-wrapper .tabs-nav .tab--third {
+    margin-left: 2.5rem;
+    margin-top: 15rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .tabs-wrapper .tabs-nav .tab--fourth {
+    margin-left: 2.5rem;
+    margin-top: 30rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .tabs-wrapper .tabs-nav .tab--fifth {
+    margin-left: 22.5rem;
+    margin-top: 40rem;
+  }
 }
 .tabs-wrapper .tabs-nav .tab.active {
   width: 130px;
   height: 130px;
   margin-top: 0;
+}
+@media screen and (min-width: 1024px) {
+  .tabs-wrapper .tabs-nav .tab.active {
+    width: 150px;
+    height: 150px;
+    margin-top: 20rem;
+  }
+}
+.tabs-wrapper .border-line-wrapper {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .tabs-wrapper .border-line-wrapper {
+    display: block;
+    position: relative;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1rem;
+    height: 30rem;
+    margin-left: 42rem;
+    margin-top: 13rem;
+  }
+}
+.tabs-wrapper .border-line-wrapper .border-line {
+  width: 40%;
+  height: 100%;
+  background-color: #dae0fe;
+  border-radius: 2px;
+  position: absolute;
+}
+.tabs-wrapper .border-line-wrapper .border-dot {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  border: 2px solid #dae0fe;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 2rem 0;
+  transition: all 0.5s ease-in-out;
+}
+.tabs-wrapper .border-line-wrapper .border-dot.active {
+  background-color: #317ade;
 }
 .tabs-wrapper .tab-description {
   width: 95%;
@@ -1022,11 +1134,29 @@
   margin-left: 2.5%;
   margin-top: 5rem;
 }
+@media screen and (min-width: 1024px) {
+  .tabs-wrapper .tab-description {
+    position: absolute;
+    width: 50rem;
+    right: 0;
+    top: 0;
+    margin-top: 55rem;
+    margin-right: 5rem;
+    height: 40rem;
+  }
+}
 .tabs-wrapper .tab-description .tab-description-title {
   font-size: 2.4rem;
   font-family: futura-pt, "Arial Condensed", sans-serif;
   font-weight: 700;
   font-style: normal;
+}
+@media screen and (min-width: 1024px) {
+  .tabs-wrapper .tab-description .tab-description-title {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 8rem;
+  }
 }
 .tabs-wrapper .tab-description .tab-description-subtitle {
   font-size: 1.6rem;
@@ -1036,12 +1166,28 @@
   font-weight: 700;
   font-style: normal;
 }
+@media screen and (min-width: 1024px) {
+  .tabs-wrapper .tab-description .tab-description-subtitle {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 5rem;
+  }
+}
 .tabs-wrapper .tab-description .tab-description-text {
   font-size: 2rem;
   margin-top: 0.5rem;
   font-family: futura-pt, "Arial Condensed", sans-serif;
   font-weight: 500;
   font-style: italic;
+}
+@media screen and (min-width: 1024px) {
+  .tabs-wrapper .tab-description .tab-description-text {
+    font-size: 2.4rem;
+    position: absolute;
+    width: 50rem;
+    right: 0;
+    top: 0;
+  }
 }
 
 .hire-us {
