@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+body {
+  height: 120vh;
+}
+
 .main-header {
   width: 100%;
   height: 10rem;
@@ -47,6 +51,7 @@
   right: 2rem;
   display: flex;
   align-items: center;
+  z-index: 4;
 }
 @media screen and (min-width: 1024px) {
   .main-header .hamburger-wrapper {
@@ -69,6 +74,7 @@
   height: 2px;
   background-color: #fff;
   border-radius: 2px;
+  transition: all 0.3s ease-in-out;
 }
 .main-header .hamburger-wrapper .hamburger-top {
   position: absolute;
@@ -77,6 +83,21 @@
 .main-header .hamburger-wrapper .hamburger-btm {
   position: absolute;
   bottom: 2px;
+}
+.main-header .hamburger-wrapper.open {
+  z-index: 4;
+}
+.main-header .hamburger-wrapper.open .hamburger-top {
+  top: 9px;
+  rotate: -45deg;
+}
+.main-header .hamburger-wrapper.open .hamburger-btm {
+  rotate: 45deg;
+  bottom: 9px;
+}
+.main-header .hamburger-wrapper.open .hamburger-mid {
+  translate: 15px;
+  background-color: transparent;
 }
 .main-header .menu-text {
   display: none;
@@ -93,6 +114,62 @@
     margin-top: 10px;
     margin-right: -2rem;
   }
+}
+
+.main-menu {
+  display: none;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  width: 100%;
+  height: 120vh;
+  align-items: center;
+  justify-content: center;
+}
+.main-menu .logo-wrapper {
+  width: 10rem;
+  height: 3.5rem;
+  margin-left: 2rem;
+  margin-top: 3.25rem;
+  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 1024px) {
+  .main-menu .logo-wrapper {
+    margin-left: 3rem;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .main-menu .logo-wrapper {
+    right: initial;
+    left: 0;
+    margin-left: 4rem;
+    top: 50vh;
+    position: fixed;
+  }
+}
+.main-menu .logo-wrapper .logo {
+  width: 100%;
+  height: 100%;
+}
+.main-menu .main-nav {
+  width: 50rem;
+  height: 80vh;
+  border: 1px solid white;
+  position: relative;
+}
+
+.main-menu.open {
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  background-color: #317ade;
 }
 
 .hero-main {

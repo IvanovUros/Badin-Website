@@ -1,3 +1,4 @@
+const body = document.getElementById('body');
 const tabsNav = document.querySelector('.tabs-nav');
 const tabs = Array.from(document.getElementsByClassName('tab'));
 const leftArrowBtn = document.querySelector('.left-arrow-container');
@@ -14,13 +15,41 @@ const tabDescriptionText = document.querySelector('.tab-description-text');
 const trustedClientLogo = Array.from(document.getElementsByClassName('trusted-logo-wrapper'));
 const trustedLogoCover = Array.from(document.getElementsByClassName('cover'));
 const tabBorderDots = Array.from(document.getElementsByClassName('border-dot'));
+const menuBtn = document.querySelector('.hamburger-wrapper');
+const mainMenuWindow = document.querySelector('.main-menu');
+const whatWeDoBtn = document.querySelector('.what-we-do');
+const lifeAtBadinBtn = document.querySelector('.life-at-badin');
 let tabIndicator = 0;
-let test = true;
 let screenWidth = screen.width;
+let menuOpen = false;
 
 let tabsAnimationInterval = setInterval(() => {
     tabsLaptopAnimation();
 }, 4000);
+
+menuBtn.addEventListener('click', () => {
+    if(!menuOpen) {
+        menuBtn.classList.add('open');
+        whatWeDoBtn.style.zIndex ='0';
+        lifeAtBadinBtn.style.zIndex ='0';
+        menuOpen = true;
+        body.style.overflow = 'hidden';
+        mainMenuWindow.style.display = 'flex';
+        setTimeout(function() {
+            mainMenuWindow.classList.add('open');
+        },100);
+    } else {
+        menuBtn.classList.remove('open');
+        mainMenuWindow.classList.remove('open');
+        whatWeDoBtn.style.zIndex ='1';
+        lifeAtBadinBtn.style.zIndex ='1';
+        body.style.overflow = 'visible';
+        setTimeout(function() {
+            mainMenuWindow.style.display = 'none';
+        },500);
+        menuOpen = false;
+    };
+});
 
 window.addEventListener('resize', () => {
     screenWidth = screen.width;
