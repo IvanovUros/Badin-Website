@@ -13,6 +13,88 @@
 
 body {
     height: 120vh;
+    background-color: $badin-blue;
+}
+
+
+.hamburger-wrapper--desktop {
+    display: none;
+    @media screen and (min-width:$desktop) {
+        display: flex;
+        width: 25px;
+        height: 25px;
+        position: relative;
+        position: absolute;
+        z-index: 50;
+        top: 50vh;
+        margin-left: 3.5rem;
+        position: fixed;
+        align-items: center;
+    }
+
+    .hamburger-top,
+    .hamburger-mid,
+    .hamburger-btm {
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        right: 0;
+        background-color: $white;
+        border-radius: 5px;
+        transition: all .3s ease-in-out;
+    }
+    
+    .hamburger-top {
+        top: 2.5px;
+    }
+    
+    .hamburger-btm {
+        bottom: 2.5px;
+    }
+}
+
+.hamburger-wrapper--desktop:hover {
+    .hamburger-mid {
+        width: 35px;
+    }
+
+    .hamburger-btm {
+        width: 30px;
+    }
+}
+
+.bottom-blue-line,
+.top-blue-line {
+    width: 100vw;
+    height: 0;
+    background-color: $badin-blue;
+    transition: all .5s ease-in-out;
+    position: absolute;
+    position: fixed;
+    z-index: 20;
+}
+
+.bottom-blue-line {
+    bottom: 0;
+}
+
+.top-blue-line {
+    top: 0;
+}
+
+.blue-cover {
+    
+}
+
+.test {
+    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all .5s ease-in-out;
+    // scale: 0.5;
+    // margin-top: -181%;
+    overflow: hidden;
 }
 
 .main-header {
@@ -56,11 +138,12 @@ body {
             right: 10rem;
         }
         @media  screen and(min-width:$desktop) {
-            right: initial;
-            left: 0;
-            margin-left: 4rem;
-            top: 50vh;
-            position: fixed;
+            // right: initial;
+            // left: 0;
+            // margin-left: 4rem;
+            // top: 50vh;
+            // position: fixed;
+            display: none;
         }
 
         .hamburger-top,
@@ -71,17 +154,16 @@ body {
             background-color: $white;
             border-radius: 2px;
             transition: all .3s ease-in-out;
+            position: absolute;
         }
 
         .hamburger-top {
-            position: absolute;
             top: 2px;
         }
 
         .hamburger-btm {
-            position: absolute;
             bottom: 2px;
-        }
+        } 
     }
 
     .hamburger-wrapper.open {
@@ -104,18 +186,19 @@ body {
 
     .menu-text {
         display: none;
-        @media  screen and(min-width:$desktop) {
-            display: block;
-            color: $white;
-            position: absolute;
-            font-size: 1.5rem;
-            writing-mode: vertical-rl;
-            right: 0;
-            margin-top: 10px;
-            margin-right: -2rem;
-        }
+        // @media  screen and(min-width:$desktop) {
+        //     display: block;
+        //     color: $white;
+        //     position: absolute;
+        //     font-size: 1.5rem;
+        //     writing-mode: vertical-rl;
+        //     right: 0;
+        //     margin-top: 10px;
+        //     margin-right: -2rem;
+        // }
     }
 }
+
 
 .main-menu {
     display: none;
@@ -126,7 +209,7 @@ body {
     z-index: 0;
     top: 0;
     width: 100%;
-    height: 120vh;
+    height: 100vh;
     align-items: center;
     justify-content: center;
 
@@ -157,10 +240,117 @@ body {
     }
 
     .main-nav {
-        width: 50rem;
-        height: 80vh;
-        border: 1px solid white;
+        width: 30rem;
+        height: 70vh;
         position: relative;
+        position: absolute;
+        top: 0;
+        margin-top: 15vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .main-nav-item {
+            float: left;
+            width: 80%;
+            height: calc(100%/7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all .3s ease-in-out;
+            
+            .hover-box {
+                position: absolute;
+                height: 90%;
+                width: 0;
+                opacity: .5;
+                background-color: #0e3479 ;
+                z-index: 0;
+                left: 0;
+                transition: all .3s ease-in-out;
+            }
+
+            .home {
+                margin-left: 6rem;
+                width: 40px;
+                opacity: .6;
+            }
+
+            .about-us {
+                margin-left: 2.5rem;
+            }
+
+            .services {
+                margin-left: 3rem;
+            }
+
+            .products {
+                margin-left: 3rem;
+            }
+
+            .careers {
+                margin-left: 4rem;
+            }
+
+            .blog {
+                margin-left: 7rem;
+            }
+
+            .contact {
+                margin-left: 4rem
+            }
+
+            .main-nav-text {
+                @include font-primary-demi;
+                font-size: 4rem;
+                color: $white;
+                position: absolute;
+                z-index: 1;
+            }
+        }
+
+        .main-nav-item:hover {
+            .hover-box {
+                width: 40px;
+            }
+        }
+    }
+
+    .socials-wrapper {
+        width: 25rem;
+        height: 1.7rem;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 7rem;
+        display: flex;
+        justify-content: center;
+
+        .social-media-link {
+            width: 1.7rem;
+            height: 100%;
+            border: 1px solid white;
+            border-radius: 2px;
+            margin: 0 1rem;
+        }
+    }
+
+    .adress {
+        @include font-primary-demi;
+        font-size: 1.4rem;
+        color: $white;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 4.5rem;
+    }
+
+    .info {
+        @include font-primary-demi;
+        font-size: 1.4rem;
+        color: $white;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 3rem;
     }
 }
 
@@ -549,6 +739,7 @@ body {
 }
 
 .how-we-got {
+    background-color: $white;
     width: 100%;
     height: 130vh;
     position: relative;
@@ -883,9 +1074,11 @@ body {
 }
 
 .tabs-wrapper {
+    background-color: $white;
     width: 100%;
     height: 115vh;
     position: relative;
+    margin-top: -5rem;
     // overflow: hidden;
     @media screen and (min-width:$tablet) {
         padding: 0 1.5rem;
@@ -893,6 +1086,7 @@ body {
     @media screen and (min-width:$laptop) {
         height: 160vh;
     }
+    
 
     .tabs-heading {
         font-size: 5rem;
@@ -1197,6 +1391,7 @@ body {
     position: relative;
     background-color: $secondary-background-color;
     padding-top: .5rem;
+    overflow: hidden;
 
     .hire-us-heading {
         font-size: 5rem;
@@ -1275,6 +1470,7 @@ body {
             display: flex;
             align-items: center;
             position: absolute;
+            overflow: hidden;
             animation: trusted-list-animation 7s linear infinite alternate;
             
             .trusted-logo-wrapper {
@@ -1310,6 +1506,7 @@ body {
     display: flex;
     flex-direction: column;
     padding-top: 5rem;
+    overflow: hidden;
     @media screen and (min-width:$tablet) {
         height: 120vh;
     }
@@ -1466,11 +1663,13 @@ body {
 }
 
 .gallery {
+    background-color: $white;
     width: 100%;
     height: 300vh;
     padding: 5rem 0;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     @media screen and (min-width:$tablet) {
         height: 410vh;
     }
@@ -1630,6 +1829,7 @@ body {
     .tech-list-dwn {
        white-space: nowrap;
        position: absolute;
+       overflow: hidden;
        height: 40px;
        
        .tech {
@@ -1681,10 +1881,12 @@ body {
 }
 
 .contacts {
+    background-color: $white;
     width: 100%;
     height: 115vh;
     position: relative;
     padding-top: 5rem;
+    overflow: hidden;
     @media screen and (min-width:$tablet) {
         height: 70vh;
     }

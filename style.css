@@ -11,6 +11,77 @@
 
 body {
   height: 120vh;
+  background-color: #317ade;
+}
+
+.hamburger-wrapper--desktop {
+  display: none;
+}
+@media screen and (min-width: 1366px) {
+  .hamburger-wrapper--desktop {
+    display: flex;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    position: absolute;
+    z-index: 50;
+    top: 50vh;
+    margin-left: 3.5rem;
+    position: fixed;
+    align-items: center;
+  }
+}
+.hamburger-wrapper--desktop .hamburger-top,
+.hamburger-wrapper--desktop .hamburger-mid,
+.hamburger-wrapper--desktop .hamburger-btm {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+.hamburger-wrapper--desktop .hamburger-top {
+  top: 2.5px;
+}
+.hamburger-wrapper--desktop .hamburger-btm {
+  bottom: 2.5px;
+}
+
+.hamburger-wrapper--desktop:hover .hamburger-mid {
+  width: 35px;
+}
+.hamburger-wrapper--desktop:hover .hamburger-btm {
+  width: 30px;
+}
+
+.bottom-blue-line,
+.top-blue-line {
+  width: 100vw;
+  height: 0;
+  background-color: #317ade;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  position: fixed;
+  z-index: 20;
+}
+
+.bottom-blue-line {
+  bottom: 0;
+}
+
+.top-blue-line {
+  top: 0;
+}
+
+.test {
+  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
 }
 
 .main-header {
@@ -60,11 +131,7 @@ body {
 }
 @media screen and (min-width: 1366px) {
   .main-header .hamburger-wrapper {
-    right: initial;
-    left: 0;
-    margin-left: 4rem;
-    top: 50vh;
-    position: fixed;
+    display: none;
   }
 }
 .main-header .hamburger-wrapper .hamburger-top,
@@ -75,13 +142,12 @@ body {
   background-color: #fff;
   border-radius: 2px;
   transition: all 0.3s ease-in-out;
+  position: absolute;
 }
 .main-header .hamburger-wrapper .hamburger-top {
-  position: absolute;
   top: 2px;
 }
 .main-header .hamburger-wrapper .hamburger-btm {
-  position: absolute;
   bottom: 2px;
 }
 .main-header .hamburger-wrapper.open {
@@ -102,19 +168,6 @@ body {
 .main-header .menu-text {
   display: none;
 }
-@media screen and (min-width: 1366px) {
-  .main-header .menu-text {
-    display: block;
-    color: #fff;
-    position: absolute;
-    font-size: 1.5rem;
-    -ms-writing-mode: tb-rl;
-        writing-mode: vertical-rl;
-    right: 0;
-    margin-top: 10px;
-    margin-right: -2rem;
-  }
-}
 
 .main-menu {
   display: none;
@@ -125,7 +178,7 @@ body {
   z-index: 0;
   top: 0;
   width: 100%;
-  height: 120vh;
+  height: 100vh;
   align-items: center;
   justify-content: center;
 }
@@ -158,10 +211,106 @@ body {
   height: 100%;
 }
 .main-menu .main-nav {
-  width: 50rem;
-  height: 80vh;
-  border: 1px solid white;
+  width: 30rem;
+  height: 70vh;
   position: relative;
+  position: absolute;
+  top: 0;
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-menu .main-nav .main-nav-item {
+  float: left;
+  width: 80%;
+  height: 14.2857142857%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.main-menu .main-nav .main-nav-item .hover-box {
+  position: absolute;
+  height: 90%;
+  width: 0;
+  opacity: 0.5;
+  background-color: #0e3479;
+  z-index: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+.main-menu .main-nav .main-nav-item .home {
+  margin-left: 6rem;
+  width: 40px;
+  opacity: 0.6;
+}
+.main-menu .main-nav .main-nav-item .about-us {
+  margin-left: 2.5rem;
+}
+.main-menu .main-nav .main-nav-item .services {
+  margin-left: 3rem;
+}
+.main-menu .main-nav .main-nav-item .products {
+  margin-left: 3rem;
+}
+.main-menu .main-nav .main-nav-item .careers {
+  margin-left: 4rem;
+}
+.main-menu .main-nav .main-nav-item .blog {
+  margin-left: 7rem;
+}
+.main-menu .main-nav .main-nav-item .contact {
+  margin-left: 4rem;
+}
+.main-menu .main-nav .main-nav-item .main-nav-text {
+  font-family: futura-pt, "Arial Condensed", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 4rem;
+  color: #fff;
+  position: absolute;
+  z-index: 1;
+}
+.main-menu .main-nav .main-nav-item:hover .hover-box {
+  width: 40px;
+}
+.main-menu .socials-wrapper {
+  width: 25rem;
+  height: 1.7rem;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 7rem;
+  display: flex;
+  justify-content: center;
+}
+.main-menu .socials-wrapper .social-media-link {
+  width: 1.7rem;
+  height: 100%;
+  border: 1px solid white;
+  border-radius: 2px;
+  margin: 0 1rem;
+}
+.main-menu .adress {
+  font-family: futura-pt, "Arial Condensed", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.4rem;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 4.5rem;
+}
+.main-menu .info {
+  font-family: futura-pt, "Arial Condensed", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.4rem;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 3rem;
 }
 
 .main-menu.open {
@@ -651,6 +800,7 @@ body {
 }
 
 .how-we-got {
+  background-color: #fff;
   width: 100%;
   height: 130vh;
   position: relative;
@@ -1047,9 +1197,11 @@ body {
 }
 
 .tabs-wrapper {
+  background-color: #fff;
   width: 100%;
   height: 115vh;
   position: relative;
+  margin-top: -5rem;
 }
 @media screen and (min-width: 768px) {
   .tabs-wrapper {
@@ -1370,6 +1522,7 @@ body {
   position: relative;
   background-color: #f9fafe;
   padding-top: 0.5rem;
+  overflow: hidden;
 }
 .hire-us .hire-us-heading {
   font-size: 5rem;
@@ -1462,6 +1615,7 @@ body {
   display: flex;
   align-items: center;
   position: absolute;
+  overflow: hidden;
   -webkit-animation: trusted-list-animation 7s linear infinite alternate;
           animation: trusted-list-animation 7s linear infinite alternate;
 }
@@ -1497,6 +1651,7 @@ body {
   display: flex;
   flex-direction: column;
   padding-top: 5rem;
+  overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   .career {
@@ -1699,11 +1854,13 @@ body {
 }
 
 .gallery {
+  background-color: #fff;
   width: 100%;
   height: 300vh;
   padding: 5rem 0;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   .gallery {
@@ -1883,6 +2040,7 @@ body {
 .experience .tech-list-dwn {
   white-space: nowrap;
   position: absolute;
+  overflow: hidden;
   height: 40px;
 }
 .experience .tech-list-up .tech,
@@ -1947,10 +2105,12 @@ body {
 }
 
 .contacts {
+  background-color: #fff;
   width: 100%;
   height: 115vh;
   position: relative;
   padding-top: 5rem;
+  overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   .contacts {

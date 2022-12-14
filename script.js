@@ -19,6 +19,12 @@ const menuBtn = document.querySelector('.hamburger-wrapper');
 const mainMenuWindow = document.querySelector('.main-menu');
 const whatWeDoBtn = document.querySelector('.what-we-do');
 const lifeAtBadinBtn = document.querySelector('.life-at-badin');
+const mainNavItems = Array.from(document.getElementsByClassName('main-nav-item'));
+const test = document.querySelector('.test');
+const menuBtnDesktop = document.querySelector('.hamburger-wrapper--desktop');
+const btmBlueLine = document.querySelector('.bottom-blue-line');
+const topBlueLine = document.querySelector('.top-blue-line');
+const blueCover = document.querySelector('.blue-cover');
 let tabIndicator = 0;
 let screenWidth = screen.width;
 let menuOpen = false;
@@ -27,27 +33,80 @@ let tabsAnimationInterval = setInterval(() => {
     tabsLaptopAnimation();
 }, 4000);
 
+onload = () => {
+    tabs[0].classList.add('active');
+    tabBorderDots[0].classList.add('active');
+    mainNavItems.forEach(mainNavItems => {
+        mainNavItems.style.opacity = '0';
+    });
+    mainNavItems[0].style.opacity = '1';
+};
+
+menuBtnDesktop.addEventListener('mouseover', () => {
+    test.style.scale = '0.8';
+    test.style.marginTop = '-112.5vh';
+    test.style.marginRight = '-11.1%';
+    btmBlueLine.style.height = '10vh';
+    topBlueLine.style.height = '10vh';
+})
+
+menuBtnDesktop.addEventListener('mouseout', () => {
+    test.style.scale = '1';
+    test.style.marginTop = '0';
+    test.style.marginRight = '0';
+    btmBlueLine.style.height = '0';
+    topBlueLine.style.height = '0';
+})
+
+menuBtnDesktop.addEventListener('click', () => {
+    btmBlueLine.style.height = '10vh';
+    topBlueLine.style.height = '10vh';
+})
+
 menuBtn.addEventListener('click', () => {
     if(!menuOpen) {
+        menuOpen = true;
         menuBtn.classList.add('open');
         whatWeDoBtn.style.zIndex ='0';
         lifeAtBadinBtn.style.zIndex ='0';
-        menuOpen = true;
         body.style.overflow = 'hidden';
         mainMenuWindow.style.display = 'flex';
         setTimeout(function() {
             mainMenuWindow.classList.add('open');
         },100);
+        setTimeout(function () {
+            mainNavItems[1].style.opacity = '1';
+        },300);
+        setTimeout(function () {
+            mainNavItems[2].style.opacity = '1';
+        },400);
+        setTimeout(function () {
+            mainNavItems[3].style.opacity = '1';
+        },500);
+        setTimeout(function () {
+            mainNavItems[4].style.opacity = '1';
+        },600);
+        setTimeout(function () {
+            mainNavItems[5].style.opacity = '1';
+        },700);
+        setTimeout(function () {
+            mainNavItems[6].style.opacity = '1';
+        },800);
+
     } else {
+        menuOpen = false;
         menuBtn.classList.remove('open');
         mainMenuWindow.classList.remove('open');
-        whatWeDoBtn.style.zIndex ='1';
-        lifeAtBadinBtn.style.zIndex ='1';
         body.style.overflow = 'visible';
         setTimeout(function() {
             mainMenuWindow.style.display = 'none';
+            whatWeDoBtn.style.zIndex ='1';
+            lifeAtBadinBtn.style.zIndex ='1';
         },500);
-        menuOpen = false;
+        mainNavItems.forEach(mainNavItems => {
+            mainNavItems.style.opacity = '0';
+        });
+        mainNavItems[0].style.opacity = '1';
     };
 });
 
@@ -260,10 +319,6 @@ function tabsLaptopAnimation () {
         };
     };
 
-onload = () => {
-    tabs[0].classList.add('active');
-    tabBorderDots[0].classList.add('active');
-};
 
 tabsNav.addEventListener('mouseover', () => {
     clearInterval(tabsAnimationInterval);
